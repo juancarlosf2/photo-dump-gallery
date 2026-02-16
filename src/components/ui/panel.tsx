@@ -8,7 +8,7 @@ const Panel = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "glass-card rounded-xl text-card-foreground shadow-sm",
+      "glass-card rounded-xl text-surface-foreground shadow-sm",
       className
     )}
     {...props}
@@ -49,7 +49,7 @@ const PanelDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("text-sm text-muted", className)}
     {...props}
   />
 ));

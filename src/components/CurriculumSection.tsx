@@ -69,13 +69,13 @@ export function CurriculumSection() {
                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-foreground mb-4">
                  Full Stack <span className="text-accent">Curriculum</span>
                </h2>
-               <p className="text-lg text-muted-foreground leading-relaxed">
+               <p className="text-lg text-muted leading-relaxed">
                  Master the complete stack. From pixel-perfect frontends to scalable backend infrastructure.
                </p>
              </div>
              
              <div className="hidden md:block">
-               <div className="text-right font-mono text-xs text-muted-foreground">
+               <div className="text-right font-mono text-xs text-muted">
                  <p>v4.2.0 Updated</p>
                  <p>Latest Standards</p>
                </div>
@@ -97,16 +97,16 @@ export function CurriculumSection() {
                       <div className="rounded-lg bg-accent-soft/80 border border-accent/20 p-3 group-hover:bg-accent-soft transition-colors">
                         <Icon className="h-6 w-6 text-accent" />
                       </div>
-                      <div className="font-mono text-xs text-muted-foreground">0{index + 1}</div>
+                      <div className="font-mono text-xs text-muted">0{index + 1}</div>
                     </div>
                     
                     <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">{category.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-8 leading-relaxed">
+                    <p className="text-muted text-sm mb-8 leading-relaxed">
                       {category.description}
                     </p>
                     
                     <div className="mt-auto space-y-3">
-                      <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">Stack:</div>
+                      <div className="text-xs font-mono text-muted uppercase tracking-wider mb-2">Stack:</div>
                       <div className="flex flex-wrap gap-2">
                         {category.technologies.map((tech) => (
                           <span

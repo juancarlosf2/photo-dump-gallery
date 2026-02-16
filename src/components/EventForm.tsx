@@ -255,7 +255,7 @@ export function EventForm({
               </FormLabel>
               <FormControl>
                 <div className="relative">
-                  <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted" />
                   <Input
                     placeholder="https://zoom.us/j/..."
                     className="h-11 text-base pl-10"

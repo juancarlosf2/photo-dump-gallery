@@ -91,10 +91,10 @@ export function Header() {
         <div className="mr-4 flex gap-16">
           <Link to="/" className="mr-6 flex items-center space-x-2 group">
             <div className="relative shrink-0">
-              <Code className="h-5 w-5 text-primary transition-transform group-hover:scale-110" />
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <Code className="h-5 w-5 text-accent transition-transform group-hover:scale-110" />
+              <div className="absolute inset-0 bg-accent/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
-            <span className="hidden font-semibold text-sm sm:inline-block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap leading-none">
+            <span className="hidden font-semibold text-sm sm:inline-block bg-gradient-to-r from-accent to-accent bg-clip-text text-transparent whitespace-nowrap leading-none">
               Full Stack Campus
             </span>
           </Link>
@@ -118,14 +118,14 @@ export function Header() {
                 />
                 <span className="relative z-10">{dashboardLink.title}</span>
                 <span
-                  className={`absolute inset-0 rounded-lg bg-primary/5 transition-opacity duration-200 ${
+                  className={`absolute inset-0 rounded-lg bg-accent/5 transition-opacity duration-200 ${
                     currentPath.startsWith("/dashboard")
                       ? "opacity-100"
                       : "opacity-0 group-hover:opacity-100"
                   }`}
                 ></span>
                 <span
-                  className={`absolute inset-0 rounded-lg bg-gradient-to-r from-primary/10 to-accent/10 blur-sm transition-opacity duration-200 ${
+                  className={`absolute inset-0 rounded-lg bg-gradient-to-r from-accent/10 to-accent/10 blur-sm transition-opacity duration-200 ${
                     currentPath.startsWith("/dashboard")
                       ? "opacity-100"
                       : "opacity-0 group-hover:opacity-100"
@@ -156,8 +156,8 @@ export function Header() {
                       className="flex items-center space-x-2 mb-8"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <Code className="h-6 w-6 text-primary shrink-0" />
-                      <span className="font-semibold text-base bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap leading-none">
+                      <Code className="h-6 w-6 text-accent shrink-0" />
+                      <span className="font-semibold text-base bg-gradient-to-r from-accent to-accent bg-clip-text text-transparent whitespace-nowrap leading-none">
                         Full Stack Campus
                       </span>
                     </Link>
@@ -176,8 +176,8 @@ export function Header() {
                             className={cn(
                               "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
                               isActive
-                                ? "bg-primary/20 text-primary border border-primary/20 shadow-[0_0_20px_color-mix(in_oklab,var(--accent)_12%,transparent)]"
-                                : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                                ? "bg-accent/20 text-accent border border-accent/20 shadow-[0_0_20px_color-mix(in_oklab,var(--accent)_12%,transparent)]"
+                                : "text-muted hover:text-foreground hover:bg-white/5"
                             )}
                             onClick={() => setMobileMenuOpen(false)}
                           >
@@ -203,7 +203,7 @@ export function Header() {
           <nav className="flex items-center gap-4">
             {isPending ? (
               <div className="flex h-9 w-9 items-center justify-center">
-                <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+                <div className="h-4 w-4 animate-spin rounded-full border-2 border-accent border-t-transparent" />
               </div>
             ) : session ? (
               <>
@@ -246,7 +246,7 @@ export function Header() {
                             <p className="text-sm font-medium leading-none">
                               Account
                             </p>
-                            <p className="text-xs leading-none text-muted-foreground">
+                            <p className="text-xs leading-none text-muted">
                               {session.user.email}
                             </p>
                           </div>

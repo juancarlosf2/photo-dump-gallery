@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div>
             <h3 className="font-semibold mb-3">Product</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <ul className="space-y-2 text-sm text-muted">
               <li>
                 <Link
                   to="/"
@@ -37,7 +37,7 @@ export function Footer() {
           </div>
           <div>
             <h3 className="font-semibold mb-3">Company</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <ul className="space-y-2 text-sm text-muted">
               <li>
                 <Link
                   to="/"
@@ -66,7 +66,7 @@ export function Footer() {
           </div>
           <div>
             <h3 className="font-semibold mb-3">Resources</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <ul className="space-y-2 text-sm text-muted">
               <li>
                 <Link
                   to="/"
@@ -95,7 +95,7 @@ export function Footer() {
           </div>
           <div>
             <h3 className="font-semibold mb-3">Legal</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <ul className="space-y-2 text-sm text-muted">
               <li>
                 <Link
                   to="/"
@@ -126,10 +126,10 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex items-center space-x-2">
-              <Code className="h-6 w-6 text-primary" />
-              <span className="font-semibold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Full Stack Campus</span>
+              <Code className="h-6 w-6 text-accent" />
+              <span className="font-semibold bg-gradient-to-r from-accent to-purple-600 bg-clip-text text-transparent">Full Stack Campus</span>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted">
               © 2025 Full Stack Campus. All rights reserved.
             </p>
           </div>

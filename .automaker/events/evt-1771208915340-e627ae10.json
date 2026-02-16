@@ -1,0 +1,11 @@
+{
+  "id": "evt-1771208915340-e627ae10",
+  "trigger": "feature_error",
+  "timestamp": "2026-02-16T02:28:35.340Z",
+  "projectPath": "/Users/sonofzeus/Documents/Automaker/photo-dump-gallery",
+  "projectName": "photo-dump-gallery",
+  "featureId": "feature-1771208096304-dhtkrfw3q",
+  "featureName": "Client Proofing & Approval Portal",
+  "error": "Claude Code process exited with code 1",
+  "errorType": "execution"
+}

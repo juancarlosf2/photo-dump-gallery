@@ -18,7 +18,7 @@ export function CommentList({ postId }: CommentListProps) {
     <div className="space-y-4">
       {/* Header */}
       <div className="flex items-center gap-2">
-        <MessageSquare className="h-5 w-5 text-muted-foreground" />
+        <MessageSquare className="h-5 w-5 text-muted" />
         <h2 className="text-xl font-semibold">
           Comments ({commentCount})
         </h2>
@@ -30,7 +30,7 @@ export function CommentList({ postId }: CommentListProps) {
       )}
 
       {!session?.user && (
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-muted">
           Sign in to leave a comment.
         </p>
       )}
@@ -42,12 +42,12 @@ export function CommentList({ postId }: CommentListProps) {
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="animate-pulse bg-muted rounded-lg h-24"
+                className="animate-pulse bg-surface-secondary rounded-lg h-24"
               />
             ))}
           </div>
         ) : comments.length === 0 ? (
-          <p className="text-center text-muted-foreground py-8">
+          <p className="text-center text-muted py-8">
             No comments yet. Be the first to comment!
           </p>
         ) : (

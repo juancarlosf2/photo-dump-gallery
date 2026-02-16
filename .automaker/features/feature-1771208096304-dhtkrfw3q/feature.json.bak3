@@ -1,0 +1,15 @@
+{
+  "category": "ui",
+  "description": "Add a secure client-facing portal where studios can share a gallery for selection before final delivery. Clients can favorite, approve, reject, and leave per-photo comments so operators know exactly what to finalize.\n\n**Rationale:** Studios often lose time handling feedback over text or email. A structured approval flow reduces back-and-forth, prevents wrong exports, and improves client experience.",
+  "title": "Client Proofing & Approval Portal",
+  "status": "backlog",
+  "id": "feature-1771208096304-dhtkrfw3q",
+  "descriptionHistory": [
+    {
+      "description": "Add a secure client-facing portal where studios can share a gallery for selection before final delivery. Clients can favorite, approve, reject, and leave per-photo comments so operators know exactly what to finalize.\n\n**Rationale:** Studios often lose time handling feedback over text or email. A structured approval flow reduces back-and-forth, prevents wrong exports, and improves client experience.",
+      "timestamp": "2026-02-16T02:14:56.305Z",
+      "source": "initial"
+    }
+  ],
+  "updatedAt": "2026-02-16T02:33:09.728Z"
+}

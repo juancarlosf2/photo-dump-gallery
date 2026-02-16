@@ -30,11 +30,11 @@ function MediaThumbnail({
     return (
       <div
         className={cn(
-          "bg-muted animate-pulse flex items-center justify-center",
+          "bg-surface-secondary animate-pulse flex items-center justify-center",
           className
         )}
       >
-        <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+        <Loader2 className="h-6 w-6 animate-spin text-muted" />
       </div>
     );
   }
@@ -43,7 +43,7 @@ function MediaThumbnail({
     return (
       <button
         className={cn(
-          "relative bg-muted overflow-hidden group cursor-pointer",
+          "relative bg-surface-secondary overflow-hidden group cursor-pointer",
           className
         )}
         onClick={onClick}
@@ -67,11 +67,11 @@ function MediaThumbnail({
     return (
       <div
         className={cn(
-          "bg-muted flex items-center justify-center",
+          "bg-surface-secondary flex items-center justify-center",
           className
         )}
       >
-        <ImageIcon className="h-6 w-6 text-muted-foreground" />
+        <ImageIcon className="h-6 w-6 text-muted" />
       </div>
     );
   }
@@ -79,7 +79,7 @@ function MediaThumbnail({
   return (
     <button
       className={cn(
-        "relative bg-muted overflow-hidden group cursor-pointer",
+        "relative bg-surface-secondary overflow-hidden group cursor-pointer",
         className
       )}
       onClick={onClick}

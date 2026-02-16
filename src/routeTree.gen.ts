@@ -15,6 +15,7 @@ import { Route as SignInRouteImport } from './routes/sign-in'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as GalleryShareTokenRouteImport } from './routes/gallery/$shareToken'
 import { Route as DashboardSettingsRouteImport } from './routes/dashboard/settings'
 import { Route as DashboardNotificationsRouteImport } from './routes/dashboard/notifications'
 import { Route as DashboardMessagesRouteImport } from './routes/dashboard/messages'
@@ -22,7 +23,9 @@ import { Route as DashboardMembersRouteImport } from './routes/dashboard/members
 import { Route as DashboardClassroomRouteImport } from './routes/dashboard/classroom'
 import { Route as DashboardCalendarRouteImport } from './routes/dashboard/calendar'
 import { Route as ProfileUserIdIndexRouteImport } from './routes/profile/$userId/index'
+import { Route as DashboardGalleriesIndexRouteImport } from './routes/dashboard/galleries/index'
 import { Route as DashboardCommunityIndexRouteImport } from './routes/dashboard/community/index'
+import { Route as DashboardGalleriesGalleryIdRouteImport } from './routes/dashboard/galleries/$galleryId'
 import { Route as DashboardCommunityCreatePostRouteImport } from './routes/dashboard/community/create-post'
 import { Route as ApiStripeWebhookRouteImport } from './routes/api/stripe/webhook'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
@@ -59,6 +62,11 @@ const DashboardIndexRoute = DashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DashboardRoute,
 } as any)
+const GalleryShareTokenRoute = GalleryShareTokenRouteImport.update({
+  id: '/gallery/$shareToken',
+  path: '/gallery/$shareToken',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -94,11 +102,22 @@ const ProfileUserIdIndexRoute = ProfileUserIdIndexRouteImport.update({
   path: '/profile/$userId/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardGalleriesIndexRoute = DashboardGalleriesIndexRouteImport.update({
+  id: '/galleries/',
+  path: '/galleries/',
+  getParentRoute: () => DashboardRoute,
+} as any)
 const DashboardCommunityIndexRoute = DashboardCommunityIndexRouteImport.update({
   id: '/community/',
   path: '/community/',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardGalleriesGalleryIdRoute =
+  DashboardGalleriesGalleryIdRouteImport.update({
+    id: '/galleries/$galleryId',
+    path: '/galleries/$galleryId',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardCommunityCreatePostRoute =
   DashboardCommunityCreatePostRouteImport.update({
     id: '/community/create-post',
@@ -140,11 +159,14 @@ export interface FileRoutesByFullPath {
   '/dashboard/messages': typeof DashboardMessagesRoute
   '/dashboard/notifications': typeof DashboardNotificationsRoute
   '/dashboard/settings': typeof DashboardSettingsRoute
+  '/gallery/$shareToken': typeof GalleryShareTokenRoute
   '/dashboard/': typeof DashboardIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
   '/dashboard/community/create-post': typeof DashboardCommunityCreatePostRoute
+  '/dashboard/galleries/$galleryId': typeof DashboardGalleriesGalleryIdRoute
   '/dashboard/community/': typeof DashboardCommunityIndexRoute
+  '/dashboard/galleries/': typeof DashboardGalleriesIndexRoute
   '/profile/$userId/': typeof ProfileUserIdIndexRoute
   '/dashboard/community/post/$postId/edit': typeof DashboardCommunityPostPostIdEditRoute
   '/dashboard/community/post/$postId/': typeof DashboardCommunityPostPostIdIndexRoute
@@ -160,11 +182,14 @@ export interface FileRoutesByTo {
   '/dashboard/messages': typeof DashboardMessagesRoute
   '/dashboard/notifications': typeof DashboardNotificationsRoute
   '/dashboard/settings': typeof DashboardSettingsRoute
+  '/gallery/$shareToken': typeof GalleryShareTokenRoute
   '/dashboard': typeof DashboardIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
   '/dashboard/community/create-post': typeof DashboardCommunityCreatePostRoute
+  '/dashboard/galleries/$galleryId': typeof DashboardGalleriesGalleryIdRoute
   '/dashboard/community': typeof DashboardCommunityIndexRoute
+  '/dashboard/galleries': typeof DashboardGalleriesIndexRoute
   '/profile/$userId': typeof ProfileUserIdIndexRoute
   '/dashboard/community/post/$postId/edit': typeof DashboardCommunityPostPostIdEditRoute
   '/dashboard/community/post/$postId': typeof DashboardCommunityPostPostIdIndexRoute
@@ -182,11 +207,14 @@ export interface FileRoutesById {
   '/dashboard/messages': typeof DashboardMessagesRoute
   '/dashboard/notifications': typeof DashboardNotificationsRoute
   '/dashboard/settings': typeof DashboardSettingsRoute
+  '/gallery/$shareToken': typeof GalleryShareTokenRoute
   '/dashboard/': typeof DashboardIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
   '/dashboard/community/create-post': typeof DashboardCommunityCreatePostRoute
+  '/dashboard/galleries/$galleryId': typeof DashboardGalleriesGalleryIdRoute
   '/dashboard/community/': typeof DashboardCommunityIndexRoute
+  '/dashboard/galleries/': typeof DashboardGalleriesIndexRoute
   '/profile/$userId/': typeof ProfileUserIdIndexRoute
   '/dashboard/community/post/$postId/edit': typeof DashboardCommunityPostPostIdEditRoute
   '/dashboard/community/post/$postId/': typeof DashboardCommunityPostPostIdIndexRoute
@@ -205,11 +233,14 @@ export interface FileRouteTypes {
     | '/dashboard/messages'
     | '/dashboard/notifications'
     | '/dashboard/settings'
+    | '/gallery/$shareToken'
     | '/dashboard/'
     | '/api/auth/$'
     | '/api/stripe/webhook'
     | '/dashboard/community/create-post'
+    | '/dashboard/galleries/$galleryId'
     | '/dashboard/community/'
+    | '/dashboard/galleries/'
     | '/profile/$userId/'
     | '/dashboard/community/post/$postId/edit'
     | '/dashboard/community/post/$postId/'
@@ -225,11 +256,14 @@ export interface FileRouteTypes {
     | '/dashboard/messages'
     | '/dashboard/notifications'
     | '/dashboard/settings'
+    | '/gallery/$shareToken'
     | '/dashboard'
     | '/api/auth/$'
     | '/api/stripe/webhook'
     | '/dashboard/community/create-post'
+    | '/dashboard/galleries/$galleryId'
     | '/dashboard/community'
+    | '/dashboard/galleries'
     | '/profile/$userId'
     | '/dashboard/community/post/$postId/edit'
     | '/dashboard/community/post/$postId'
@@ -246,11 +280,14 @@ export interface FileRouteTypes {
     | '/dashboard/messages'
     | '/dashboard/notifications'
     | '/dashboard/settings'
+    | '/gallery/$shareToken'
     | '/dashboard/'
     | '/api/auth/$'
     | '/api/stripe/webhook'
     | '/dashboard/community/create-post'
+    | '/dashboard/galleries/$galleryId'
     | '/dashboard/community/'
+    | '/dashboard/galleries/'
     | '/profile/$userId/'
     | '/dashboard/community/post/$postId/edit'
     | '/dashboard/community/post/$postId/'
@@ -262,6 +299,7 @@ export interface RootRouteChildren {
   SignInRoute: typeof SignInRoute
   SignUpRoute: typeof SignUpRoute
   UnauthenticatedRoute: typeof UnauthenticatedRoute
+  GalleryShareTokenRoute: typeof GalleryShareTokenRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiStripeWebhookRoute: typeof ApiStripeWebhookRoute
   ProfileUserIdIndexRoute: typeof ProfileUserIdIndexRoute
@@ -310,6 +348,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/'
       preLoaderRoute: typeof DashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/gallery/$shareToken': {
+      id: '/gallery/$shareToken'
+      path: '/gallery/$shareToken'
+      fullPath: '/gallery/$shareToken'
+      preLoaderRoute: typeof GalleryShareTokenRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/dashboard/settings': {
       id: '/dashboard/settings'
@@ -360,11 +405,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProfileUserIdIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard/galleries/': {
+      id: '/dashboard/galleries/'
+      path: '/galleries'
+      fullPath: '/dashboard/galleries/'
+      preLoaderRoute: typeof DashboardGalleriesIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/dashboard/community/': {
       id: '/dashboard/community/'
       path: '/community'
       fullPath: '/dashboard/community/'
       preLoaderRoute: typeof DashboardCommunityIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/galleries/$galleryId': {
+      id: '/dashboard/galleries/$galleryId'
+      path: '/galleries/$galleryId'
+      fullPath: '/dashboard/galleries/$galleryId'
+      preLoaderRoute: typeof DashboardGalleriesGalleryIdRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/dashboard/community/create-post': {
@@ -414,7 +473,9 @@ interface DashboardRouteChildren {
   DashboardSettingsRoute: typeof DashboardSettingsRoute
   DashboardIndexRoute: typeof DashboardIndexRoute
   DashboardCommunityCreatePostRoute: typeof DashboardCommunityCreatePostRoute
+  DashboardGalleriesGalleryIdRoute: typeof DashboardGalleriesGalleryIdRoute
   DashboardCommunityIndexRoute: typeof DashboardCommunityIndexRoute
+  DashboardGalleriesIndexRoute: typeof DashboardGalleriesIndexRoute
   DashboardCommunityPostPostIdEditRoute: typeof DashboardCommunityPostPostIdEditRoute
   DashboardCommunityPostPostIdIndexRoute: typeof DashboardCommunityPostPostIdIndexRoute
 }
@@ -428,7 +489,9 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardSettingsRoute: DashboardSettingsRoute,
   DashboardIndexRoute: DashboardIndexRoute,
   DashboardCommunityCreatePostRoute: DashboardCommunityCreatePostRoute,
+  DashboardGalleriesGalleryIdRoute: DashboardGalleriesGalleryIdRoute,
   DashboardCommunityIndexRoute: DashboardCommunityIndexRoute,
+  DashboardGalleriesIndexRoute: DashboardGalleriesIndexRoute,
   DashboardCommunityPostPostIdEditRoute: DashboardCommunityPostPostIdEditRoute,
   DashboardCommunityPostPostIdIndexRoute:
     DashboardCommunityPostPostIdIndexRoute,
@@ -444,6 +507,7 @@ const rootRouteChildren: RootRouteChildren = {
   SignInRoute: SignInRoute,
   SignUpRoute: SignUpRoute,
   UnauthenticatedRoute: UnauthenticatedRoute,
+  GalleryShareTokenRoute: GalleryShareTokenRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiStripeWebhookRoute: ApiStripeWebhookRoute,
   ProfileUserIdIndexRoute: ProfileUserIdIndexRoute,

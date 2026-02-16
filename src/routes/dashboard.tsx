@@ -16,6 +16,7 @@ import {
   LayoutDashboard,
   ChevronLeft,
   ChevronRight,
+  Images,
 } from "lucide-react";
 import { authClient } from "~/lib/auth-client";
 import { redirect } from "@tanstack/react-router";
@@ -47,6 +48,11 @@ const navItems: NavItem[] = [
     title: "Overview",
     href: "/dashboard",
     icon: LayoutDashboard,
+  },
+  {
+    title: "Galleries",
+    href: "/dashboard/galleries",
+    icon: Images,
   },
   {
     title: "Classroom",
@@ -109,7 +115,7 @@ function DashboardLayout() {
         >
           <Button
             variant="ghost"
-            className="h-6 w-6 text-muted-foreground hover:text-foreground"
+            className="h-6 w-6 text-muted hover:text-foreground"
             isIconOnly
             onPress={() => setIsCollapsed(!isCollapsed)}
           >
@@ -135,8 +141,8 @@ function DashboardLayout() {
                 className={cn(
                   "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
                   isActive
-                    ? "bg-primary/20 text-primary border border-primary/20 shadow-[0_0_20px_color-mix(in_oklab,var(--accent)_10%,transparent)]"
-                    : "text-muted-foreground hover:text-foreground hover:bg-white/5",
+                    ? "bg-accent/20 text-accent border border-accent/20 shadow-[0_0_20px_color-mix(in_oklab,var(--accent)_10%,transparent)]"
+                    : "text-muted hover:text-foreground hover:bg-white/5",
                   isCollapsed && "justify-center px-2"
                 )}
                 title={isCollapsed ? item.title : undefined}

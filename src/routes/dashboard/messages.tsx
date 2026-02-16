@@ -88,7 +88,7 @@ function MessagesPage() {
         </div>
 
         {/* Main content area */}
-        <Panel className="flex-1 flex min-h-0 overflow-hidden bg-card/50">
+        <Panel className="flex-1 flex min-h-0 overflow-hidden bg-surface/50">
           {/* Sidebar - Conversation List */}
           <div
             className={cn(

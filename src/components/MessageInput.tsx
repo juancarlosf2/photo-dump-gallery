@@ -79,7 +79,7 @@ export function MessageInput({ conversationId }: MessageInputProps) {
           )}
         </Button>
       </div>
-      <p className="text-xs text-muted-foreground mt-2">
+      <p className="text-xs text-muted mt-2">
         Press Enter to send, Shift+Enter for new line
       </p>
     </form>

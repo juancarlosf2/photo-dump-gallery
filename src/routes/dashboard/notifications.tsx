@@ -35,11 +35,11 @@ export const Route = createFileRoute("/dashboard/notifications")({
 function getNotificationIcon(type: string) {
   switch (type) {
     case "post-reply":
-      return <MessageSquare className="h-5 w-5 text-primary" />;
+      return <MessageSquare className="h-5 w-5 text-accent" />;
     case "comment-reply":
       return <Reply className="h-5 w-5 text-blue-500" />;
     default:
-      return <Bell className="h-5 w-5 text-muted-foreground" />;
+      return <Bell className="h-5 w-5 text-muted" />;
   }
 }
 
@@ -57,7 +57,7 @@ function NotificationCard({
       className={cn(
         "transition-colors",
         !notification.isRead &&
-          "bg-primary/5 border-primary/20 shadow-[0_0_20px_color-mix(in_oklab,var(--accent)_5%,transparent)]",
+          "bg-accent/5 border-accent/20 shadow-[0_0_20px_color-mix(in_oklab,var(--accent)_5%,transparent)]",
       )}
     >
       <PanelContent className="p-4">
@@ -77,11 +77,11 @@ function NotificationCard({
                   {notification.title}
                 </p>
                 {notification.content && (
-                  <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                  <p className="text-sm text-muted mt-1 line-clamp-2">
                     {notification.content}
                   </p>
                 )}
-                <p className="text-xs text-muted-foreground mt-2">
+                <p className="text-xs text-muted mt-2">
                   {formatDistanceToNow(new Date(notification.createdAt), {
                     addSuffix: true,
                   })}
@@ -120,7 +120,7 @@ function NotificationCard({
           </div>
           {!notification.isRead && (
             <div className="shrink-0">
-              <div className="h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_var(--accent)]" />
+              <div className="h-2 w-2 rounded-full bg-accent shadow-[0_0_10px_var(--accent)]" />
             </div>
           )}
         </div>
@@ -209,7 +209,7 @@ function NotificationsPage() {
 
         {isLoading ? (
           <div className="flex items-center justify-center py-12">
-            <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+            <div className="h-8 w-8 animate-spin rounded-full border-4 border-accent border-t-transparent" />
           </div>
         ) : filteredNotifications && filteredNotifications.length > 0 ? (
           <div className="space-y-3">
@@ -225,7 +225,7 @@ function NotificationsPage() {
         ) : (
           <Panel>
             <PanelContent className="py-12 text-center">
-              <Bell className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <Bell className="h-12 w-12 text-muted mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">
                 {filter === "unread"
                   ? "No unread notifications"
@@ -233,7 +233,7 @@ function NotificationsPage() {
                     ? "No read notifications"
                     : "No notifications yet"}
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted">
                 {filter === "all"
                   ? "When someone replies to your posts or comments, you'll see notifications here."
                   : "Try changing the filter to see other notifications."}

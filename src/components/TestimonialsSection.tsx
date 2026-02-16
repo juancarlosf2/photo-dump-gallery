@@ -63,7 +63,7 @@ export function TestimonialsSection() {
     <section id="testimonials" className="w-full py-24 relative overflow-hidden bg-background">
       {/* Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl opacity-50 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-b from-primary/10 to-transparent rounded-full blur-[120px]"></div>
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-b from-accent/10 to-transparent rounded-full blur-[120px]"></div>
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-t from-purple-500/10 to-transparent rounded-full blur-[120px]"></div>
       </div>
       
@@ -77,7 +77,7 @@ export function TestimonialsSection() {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-6xl mb-6 text-foreground">
               Success <span className="text-gradient-primary">Stories</span>
             </h2>
-            <p className="text-lg text-muted-foreground sm:text-xl max-w-2xl leading-relaxed">
+            <p className="text-lg text-muted sm:text-xl max-w-2xl leading-relaxed">
               Don't just take our word for it. Here's what our community has achieved.
             </p>
           </div>
@@ -87,10 +87,10 @@ export function TestimonialsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <FadeIn key={index} delay={index * 100} className={`h-full ${index === 1 || index === 4 ? 'lg:translate-y-8' : ''}`}>
-              <div className="bg-card/40 backdrop-blur-sm border border-border p-8 rounded-2xl h-full flex flex-col relative group hover:bg-card/60 transition-colors">
+              <div className="bg-surface/40 backdrop-blur-sm border border-border p-8 rounded-2xl h-full flex flex-col relative group hover:bg-surface/60 transition-colors">
                 {/* Quote Icon Background */}
                 <div className="absolute top-6 right-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                   <Quote className="h-16 w-16 text-primary rotate-12" />
+                   <Quote className="h-16 w-16 text-accent rotate-12" />
                 </div>
                 
                 <div className="flex gap-1 mb-6">
@@ -107,12 +107,12 @@ export function TestimonialsSection() {
                 </p>
 
                 <div className="mt-auto flex items-center gap-4 border-t border-border pt-6">
-                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center font-bold text-white text-sm shadow-lg">
+                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center font-bold text-white text-sm shadow-lg">
                     {testimonial.image}
                   </div>
                   <div>
                     <div className="font-bold text-foreground text-sm">{testimonial.name}</div>
-                    <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mt-0.5">
+                    <div className="text-xs text-muted font-medium uppercase tracking-wide mt-0.5">
                       {testimonial.role}
                     </div>
                   </div>

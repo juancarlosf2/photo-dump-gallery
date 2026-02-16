@@ -201,7 +201,7 @@ export function PortfolioItemForm({
               <Modal.Heading>
                 {isEditing ? "Edit Portfolio Item" : "Add Portfolio Item"}
               </Modal.Heading>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted">
                 {isEditing
                   ? "Update your project details below."
                   : "Showcase a project you've built or are working on."}
@@ -239,22 +239,22 @@ export function PortfolioItemForm({
                     border-2 border-dashed rounded-lg aspect-video
                     flex flex-col items-center justify-center cursor-pointer
                     transition-colors
-                    ${isDragActive ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}
+                    ${isDragActive ? "border-accent bg-accent/5" : "border-border hover:border-accent/50"}
                     ${isUploading ? "cursor-not-allowed opacity-60" : ""}
                   `}
                 >
                   <input {...getInputProps()} />
                   {isUploading ? (
-                    <div className="flex flex-col items-center gap-2 text-muted-foreground">
+                    <div className="flex flex-col items-center gap-2 text-muted">
                       <Loader2 className="h-8 w-8 animate-spin" />
                       <span className="text-sm">Uploading...</span>
                     </div>
                   ) : (
-                    <div className="flex flex-col items-center gap-2 text-muted-foreground">
+                    <div className="flex flex-col items-center gap-2 text-muted">
                       {isDragActive ? (
                         <>
-                          <Upload className="h-8 w-8 text-primary" />
-                          <span className="text-sm text-primary">Drop to upload</span>
+                          <Upload className="h-8 w-8 text-accent" />
+                          <span className="text-sm text-accent">Drop to upload</span>
                         </>
                       ) : (
                         <>

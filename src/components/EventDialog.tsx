@@ -79,7 +79,7 @@ export function EventDialog({
               <Modal.Heading>{isEditMode ? "Edit Event" : "Create Event"}</Modal.Heading>
             </Modal.Header>
             <Modal.Body>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted">
                 {isEditMode
                   ? "Update the event details."
                   : "Add a new event to the community calendar."}

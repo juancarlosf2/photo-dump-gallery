@@ -148,11 +148,11 @@ export function Calendar({
       {/* Calendar Grid */}
       <Panel className="overflow-hidden">
         {/* Weekday Headers */}
-        <div className="grid grid-cols-7 bg-muted/30 border-b border-border/50">
+        <div className="grid grid-cols-7 bg-surface-secondary/30 border-b border-border/50">
           {weekDays.map((day) => (
             <div
               key={day}
-              className="p-3 text-center text-sm font-medium text-muted-foreground"
+              className="p-3 text-center text-sm font-medium text-muted"
             >
               {day}
             </div>
@@ -165,7 +165,7 @@ export function Calendar({
           {Array.from({ length: startingDayOfWeek }).map((_, index) => (
             <div
               key={`empty-${index}`}
-              className="min-h-[100px] border-r border-b border-border/50 bg-muted/10 last:border-r-0"
+              className="min-h-[100px] border-r border-b border-border/50 bg-surface-secondary/10 last:border-r-0"
             />
           ))}
 
@@ -194,17 +194,17 @@ export function Calendar({
                 onClick={handleDayClick}
                 className={cn(
                   "min-h-[100px] border-r border-b border-border/50 p-2 last:border-r-0",
-                  past && "bg-muted/5",
-                  today && "bg-primary/10",
+                  past && "bg-surface-secondary/5",
+                  today && "bg-accent/10",
                   onDayClick &&
-                    "cursor-pointer hover:bg-muted/20 transition-colors"
+                    "cursor-pointer hover:bg-surface-secondary/20 transition-colors"
                 )}
               >
                 <div
                   className={cn(
                     "text-sm font-medium mb-1",
-                    today && "text-primary font-semibold",
-                    past && "text-muted-foreground"
+                    today && "text-accent font-semibold",
+                    past && "text-muted"
                   )}
                 >
                   {day}
@@ -219,9 +219,9 @@ export function Calendar({
                       }}
                       className={cn(
                         "w-full text-left text-xs px-2 py-1 rounded truncate",
-                        "bg-primary/20 hover:bg-primary/30 text-primary-foreground",
+                        "bg-accent/20 hover:bg-accent/30 text-accent-foreground",
                         "transition-colors cursor-pointer",
-                        "border border-primary/20"
+                        "border border-accent/20"
                       )}
                       title={event.title}
                     >
@@ -229,7 +229,7 @@ export function Calendar({
                     </button>
                   ))}
                   {dayEvents.length > 3 && (
-                    <div className="text-xs text-muted-foreground px-2">
+                    <div className="text-xs text-muted px-2">
                       +{dayEvents.length - 3} more
                     </div>
                   )}

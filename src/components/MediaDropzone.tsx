@@ -173,15 +173,15 @@ export function MediaDropzone({
       <div
         {...getRootProps()}
         className={cn(
-          "flex items-center gap-2 p-2 rounded-lg border border-dashed border-border cursor-pointer hover:border-primary/50 transition-colors",
-          isDragActive && "border-primary bg-primary/5",
+          "flex items-center gap-2 p-2 rounded-lg border border-dashed border-border cursor-pointer hover:border-accent/50 transition-colors",
+          isDragActive && "border-accent bg-accent/5",
           disabled && "opacity-50 cursor-not-allowed",
           className
         )}
       >
         <input {...getInputProps()} />
-        <ImagePlus className="h-5 w-5 text-muted-foreground" />
-        <span className="text-sm text-muted-foreground">Add media</span>
+        <ImagePlus className="h-5 w-5 text-muted" />
+        <span className="text-sm text-muted">Add media</span>
       </div>
     );
   }
@@ -194,23 +194,23 @@ export function MediaDropzone({
         className={cn(
           "border-2 border-dashed rounded-lg p-4 text-center transition-colors cursor-pointer",
           isDragActive
-            ? "border-primary bg-primary/5"
-            : "border-border hover:border-primary/50",
+            ? "border-accent bg-accent/5"
+            : "border-border hover:border-accent/50",
           (disabled || isUploading) && "opacity-50 cursor-not-allowed"
         )}
       >
         <input {...getInputProps()} />
         <div className="flex flex-col items-center gap-2">
-          <div className="flex items-center gap-2 text-muted-foreground">
+          <div className="flex items-center gap-2 text-muted">
             <ImagePlus className="h-5 w-5" />
             <Film className="h-5 w-5" />
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted">
             {isDragActive
               ? "Drop files here"
               : "Drag and drop images or videos"}
           </p>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted">
             Images: 5MB max | Videos: 100MB max | Max {maxFiles} files
           </p>
         </div>
@@ -222,7 +222,7 @@ export function MediaDropzone({
           {pendingUploads.map((upload) => (
             <div
               key={upload.id}
-              className="relative group aspect-square rounded-lg overflow-hidden bg-muted"
+              className="relative group aspect-square rounded-lg overflow-hidden bg-surface-secondary"
             >
               {/* Preview */}
               {getMediaType(upload.file.type) === "video" ? (
@@ -248,7 +248,7 @@ export function MediaDropzone({
                       <span className="text-xs">{upload.progress}%</span>
                     </div>
                   ) : (
-                    <div className="text-center text-destructive-foreground p-2">
+                    <div className="text-center text-danger-foreground p-2">
                       <AlertCircle className="h-6 w-6 mx-auto mb-1 text-red-400" />
                       <span className="text-xs text-red-300">
                         {upload.error}
@@ -262,7 +262,7 @@ export function MediaDropzone({
               {upload.status === "uploading" && (
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30">
                   <div
-                    className="h-full bg-primary transition-all"
+                    className="h-full bg-accent transition-all"
                     style={{ width: `${upload.progress}%` }}
                   />
                 </div>

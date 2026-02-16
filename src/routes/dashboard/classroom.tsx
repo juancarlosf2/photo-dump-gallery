@@ -83,7 +83,7 @@ function ModuleCard({
                   {module.description}
                 </PanelDescription>
               )}
-              <p className="text-xs text-muted-foreground mt-2">
+              <p className="text-xs text-muted mt-2">
                 Created{" "}
                 {formatRelativeTime(new Date(module.createdAt).toISOString())}
               </p>
@@ -114,7 +114,7 @@ function ModuleCard({
                     variant="ghost"
                     size="sm"
                     isIconOnly
-                    className="text-destructive hover:text-destructive"
+                    className="text-danger hover:text-danger"
                     onPress={() => setDeleteDialogOpen(true)}
                     aria-label="Delete module"
                   >
@@ -178,11 +178,11 @@ function ModuleListSkeleton({ count = 3 }: { count?: number }) {
           <PanelHeader>
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 space-y-3">
-                <div className="h-6 bg-muted/50 rounded w-1/3 animate-pulse" />
-                <div className="h-4 bg-muted/50 rounded w-2/3 animate-pulse" />
-                <div className="h-3 bg-muted/50 rounded w-1/4 animate-pulse" />
+                <div className="h-6 bg-surface-secondary/50 rounded w-1/3 animate-pulse" />
+                <div className="h-4 bg-surface-secondary/50 rounded w-2/3 animate-pulse" />
+                <div className="h-3 bg-surface-secondary/50 rounded w-1/4 animate-pulse" />
               </div>
-              <div className="h-8 w-8 bg-muted/50 rounded animate-pulse" />
+              <div className="h-8 w-8 bg-surface-secondary/50 rounded animate-pulse" />
             </div>
           </PanelHeader>
         </Panel>
@@ -215,7 +215,7 @@ function Classroom() {
           {isAdmin && (
             <Button
               onPress={() => setCreateDialogOpen(true)}
-              className="bg-primary/90 hover:bg-primary"
+              className="bg-accent/90 hover:bg-accent"
             >
               <Plus className="h-4 w-4 mr-2" />
               Create Module
@@ -238,7 +238,7 @@ function Classroom() {
             </div>
           ) : (
             <EmptyState
-              icon={<BookOpen className="h-10 w-10 text-primary/60" />}
+              icon={<BookOpen className="h-10 w-10 text-accent/60" />}
               title="No modules yet"
               description={
                 isAdmin

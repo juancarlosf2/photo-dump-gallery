@@ -1,0 +1,17 @@
+{
+  "category": "ui",
+  "description": "Add live camera guidance overlays that help guests center faces, improve spacing, and avoid cutoffs before capture. Optionally auto-trigger capture when framing quality crosses a threshold.\n\n**Rationale:** Guests often need coaching, especially in self-serve booths. Lightweight guidance can reduce retakes and increase usable shots.",
+  "title": "AI Pose & Framing Assist",
+  "status": "backlog",
+  "id": "feature-1771208096407-nj87wilwg",
+  "descriptionHistory": [
+    {
+      "description": "Add live camera guidance overlays that help guests center faces, improve spacing, and avoid cutoffs before capture. Optionally auto-trigger capture when framing quality crosses a threshold.\n\n**Rationale:** Guests often need coaching, especially in self-serve booths. Lightweight guidance can reduce retakes and increase usable shots.",
+      "timestamp": "2026-02-16T02:14:56.407Z",
+      "source": "initial"
+    }
+  ],
+  "model": "codex-gpt-5.3-codex",
+  "thinkingLevel": "none",
+  "branchName": "main"
+}

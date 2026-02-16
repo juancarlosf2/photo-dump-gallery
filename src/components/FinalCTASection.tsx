@@ -7,8 +7,8 @@ export function FinalCTASection() {
   const navigate = useNavigate();
 
   return (
-    <section className="w-full py-32 relative overflow-hidden bg-primary/90">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-purple-800 opacity-90"></div>
+    <section className="w-full py-32 relative overflow-hidden bg-accent/90">
+      <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent to-purple-800 opacity-90"></div>
       
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0">
@@ -36,7 +36,7 @@ export function FinalCTASection() {
              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                <Button
                  size="lg"
-                 className="text-lg h-16 px-10 rounded-full bg-white text-primary font-bold hover:bg-slate-100 hover:scale-105 transition-all duration-300 shadow-2xl"
+                 className="text-lg h-16 px-10 rounded-full bg-white text-accent font-bold hover:bg-slate-100 hover:scale-105 transition-all duration-300 shadow-2xl"
                  onPress={() => navigate({ to: "/sign-up", search: { redirect: undefined } })}
                >
                  Get Started Now

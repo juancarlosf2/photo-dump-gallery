@@ -24,7 +24,7 @@ export function LikeButton({
       variant="ghost"
       size={size === "sm" ? "sm" : "md"}
       className={cn(
-        "gap-1 text-muted-foreground hover:text-foreground transition-colors",
+        "gap-1 text-muted hover:text-foreground transition-colors",
         size === "sm" && "h-7 text-xs",
         isLiked && "text-red-500 hover:text-red-600",
         className

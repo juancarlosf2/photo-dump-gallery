@@ -37,8 +37,8 @@ export function PortfolioSection() {
         <PanelHeader className="pb-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5">
-                <Briefcase className="h-5 w-5 text-primary" />
+              <div className="p-2 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5">
+                <Briefcase className="h-5 w-5 text-accent" />
               </div>
               <div>
                 <PanelTitle className="text-lg">Portfolio</PanelTitle>
@@ -57,7 +57,7 @@ export function PortfolioSection() {
         <PanelContent>
           {isLoading ? (
             <div className="flex items-center justify-center py-12">
-              <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+              <Loader2 className="h-6 w-6 animate-spin text-muted" />
             </div>
           ) : portfolioItems && portfolioItems.length > 0 ? (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -71,10 +71,10 @@ export function PortfolioSection() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12 border-2 border-dashed border-border rounded-lg bg-muted/5">
-              <Briefcase className="h-12 w-12 mx-auto text-muted-foreground/50 mb-4" />
+            <div className="text-center py-12 border-2 border-dashed border-border rounded-lg bg-surface-secondary/5">
+              <Briefcase className="h-12 w-12 mx-auto text-muted/50 mb-4" />
               <h3 className="text-lg font-medium mb-1">No projects yet</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+              <p className="text-sm text-muted mb-4">
                 Add your first project to showcase your work
               </p>
               <Button onPress={() => setFormOpen(true)}>

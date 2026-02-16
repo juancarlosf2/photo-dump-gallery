@@ -251,7 +251,7 @@ export function MediaLightbox({
               >
                 {thumbUrl ? (
                   att.type === "video" ? (
-                    <div className="w-full h-full bg-muted flex items-center justify-center">
+                    <div className="w-full h-full bg-surface-secondary flex items-center justify-center">
                       <Play className="h-4 w-4 text-white" />
                     </div>
                   ) : (
@@ -262,7 +262,7 @@ export function MediaLightbox({
                     />
                   )
                 ) : (
-                  <div className="w-full h-full bg-muted" />
+                  <div className="w-full h-full bg-surface-secondary" />
                 )}
               </button>
             );

@@ -7,7 +7,7 @@
       "title": "Feature Verified",
       "message": "\"feature-1771206886309-gtbv7z4r4f7\" has been verified and is complete.",
       "createdAt": "2026-02-16T01:57:37.919Z",
-      "read": false,
+      "read": true,
       "dismissed": false,
       "featureId": "feature-1771206886309-gtbv7z4r4f7",
       "projectPath": "/Users/sonofzeus/Documents/Automaker/photo-dump-gallery"

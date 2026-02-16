@@ -11,10 +11,10 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-[2] flex flex-col">
         {/* Top notification banner */}
         <FadeIn delay={0} className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide animate-fade-up backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-semibold uppercase tracking-wide animate-fade-up backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
             New Cohort Starting Soon
           </div>
@@ -33,7 +33,7 @@ export function Hero() {
               </h1>
             </FadeIn>
             <FadeIn delay={200}>
-              <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-10 font-light leading-relaxed">
+              <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-muted mb-10 font-light leading-relaxed">
                 Master frontend and backend development, build real-world
                 projects, and launch your software engineering career. Join
                 thousands learning full stack development in our supportive
@@ -46,7 +46,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <Button
                 size="lg"
-                className="w-full sm:w-auto h-14 px-8 rounded-full bg-gradient-to-r from-primary to-primary/80 text-white font-bold hover:shadow-[0_0_40px_-10px_color-mix(in_oklab,var(--accent)_50%,transparent)] transition-all transform hover:-translate-y-1 text-base"
+                className="w-full sm:w-auto h-14 px-8 rounded-full bg-gradient-to-r from-accent to-accent/80 text-white font-bold hover:shadow-[0_0_40px_-10px_color-mix(in_oklab,var(--accent)_50%,transparent)] transition-all transform hover:-translate-y-1 text-base"
                 onPress={() => navigate({ to: "/sign-up", search: { redirect: undefined } })}
               >
                 <Rocket className="mr-2 h-4 w-4" />

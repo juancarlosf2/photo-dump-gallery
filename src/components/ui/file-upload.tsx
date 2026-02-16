@@ -106,8 +106,8 @@ export function FileUpload({
         className={cn(
           "border-2 border-dashed rounded-lg p-8 text-center transition-colors cursor-pointer",
           isDragActive
-            ? "border-primary bg-primary/5"
-            : "border-border hover:border-primary/50",
+            ? "border-accent bg-accent/5"
+            : "border-border hover:border-accent/50",
           disabled && "opacity-50 cursor-not-allowed"
         )}
       >
@@ -115,17 +115,17 @@ export function FileUpload({
 
         {children || (
           <div className="space-y-4">
-            <div className="mx-auto w-12 h-12 text-muted-foreground">
+            <div className="mx-auto w-12 h-12 text-muted">
               <Upload className="w-full h-full" />
             </div>
             <div className="space-y-2">
               <p className="text-sm font-medium">
                 {isDragActive ? "Drop files here" : "Drag and drop files here"}
               </p>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-muted">
                 or click anywhere to browse files
               </p>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-muted">
                 Max {Math.round(maxSize / 1024 / 1024)}MB per file
               </p>
             </div>
@@ -139,7 +139,7 @@ export function FileUpload({
           {errors.map((error, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 text-sm text-destructive"
+              className="flex items-center gap-2 text-sm text-danger"
             >
               <AlertCircle className="w-4 h-4" />
               {error}
@@ -163,7 +163,7 @@ export function FileUpload({
               className="flex items-center gap-3 p-4 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg transition-all duration-200"
             >
               {file.type.startsWith("image/") ? (
-                <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-muted">
+                <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-surface-secondary">
                   {file.preview ? (
                     <img
                       src={file.preview}
@@ -171,12 +171,12 @@ export function FileUpload({
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <File className="w-6 h-6 text-muted-foreground m-2" />
+                    <File className="w-6 h-6 text-muted m-2" />
                   )}
                 </div>
               ) : (
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                  <File className="w-5 h-5 text-primary" />
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                  <File className="w-5 h-5 text-accent" />
                 </div>
               )}
               <div className="flex-1 min-w-0">

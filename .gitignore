@@ -20,3 +20,5 @@ dist/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+# heroui-agents-md
+.heroui-docs/

@@ -1,8 +1,8 @@
 services:
-  full-stack-campus:
+  photodumpgallery:
     image: postgres:17
     restart: always
-    container_name: full-stack-campus-db
+    container_name: photodumpgallery
     ports:
       - 5432:5432
     environment:

@@ -137,7 +137,7 @@ export function ExtendedProfileForm() {
     return (
       <Panel>
         <PanelContent className="p-8 flex items-center justify-center">
-          <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+          <Loader2 className="h-6 w-6 animate-spin text-muted" />
         </PanelContent>
       </Panel>
     );
@@ -151,8 +151,8 @@ export function ExtendedProfileForm() {
       <PanelHeader className="pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5">
-              <Sparkles className="h-5 w-5 text-primary" />
+            <div className="p-2 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5">
+              <Sparkles className="h-5 w-5 text-accent" />
             </div>
             <div>
               <PanelTitle className="text-lg">Extended Profile</PanelTitle>
@@ -166,7 +166,7 @@ export function ExtendedProfileForm() {
           <div className="flex items-center gap-2">
             <Label
               htmlFor="visibility"
-              className="text-sm text-muted-foreground"
+              className="text-sm text-muted"
             >
               {profile?.isPublic ? (
                 <span className="flex items-center gap-1">
@@ -219,7 +219,7 @@ export function ExtendedProfileForm() {
                     <span
                       className={
                         bioLength > BIO_WARNING_THRESHOLD
-                          ? "text-destructive"
+                          ? "text-danger"
                           : ""
                       }
                     >
@@ -279,7 +279,7 @@ export function ExtendedProfileForm() {
                     <span
                       className={
                         lookingForLength > LOOKING_FOR_WARNING_THRESHOLD
-                          ? "text-destructive"
+                          ? "text-danger"
                           : ""
                       }
                     >
@@ -302,7 +302,7 @@ export function ExtendedProfileForm() {
                     <FormItem>
                       <FormControl>
                         <div className="relative">
-                          <Github className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                          <Github className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted" />
                           <Input
                             {...field}
                             value={field.value || ""}
@@ -324,7 +324,7 @@ export function ExtendedProfileForm() {
                     <FormItem>
                       <FormControl>
                         <div className="relative">
-                          <Linkedin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                          <Linkedin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted" />
                           <Input
                             {...field}
                             value={field.value || ""}
@@ -346,7 +346,7 @@ export function ExtendedProfileForm() {
                     <FormItem>
                       <FormControl>
                         <div className="relative">
-                          <Twitter className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                          <Twitter className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted" />
                           <Input
                             {...field}
                             value={field.value || ""}
@@ -368,7 +368,7 @@ export function ExtendedProfileForm() {
                     <FormItem>
                       <FormControl>
                         <div className="relative">
-                          <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                          <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted" />
                           <Input
                             {...field}
                             value={field.value || ""}

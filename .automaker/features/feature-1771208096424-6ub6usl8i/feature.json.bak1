@@ -1,0 +1,14 @@
+{
+  "category": "ui",
+  "description": "Offer a client-facing storefront for add-on purchases like extra downloads, premium edits, and print bundles after initial delivery. Tie purchases to Stripe and auto-fulfill digital items immediately.\n\n**Rationale:** Studios commonly monetize after-event demand for more assets. A built-in upsell flow creates new revenue without extra manual sales work.",
+  "title": "Client Upsell Storefront",
+  "status": "backlog",
+  "id": "feature-1771208096424-6ub6usl8i",
+  "descriptionHistory": [
+    {
+      "description": "Offer a client-facing storefront for add-on purchases like extra downloads, premium edits, and print bundles after initial delivery. Tie purchases to Stripe and auto-fulfill digital items immediately.\n\n**Rationale:** Studios commonly monetize after-event demand for more assets. A built-in upsell flow creates new revenue without extra manual sales work.",
+      "timestamp": "2026-02-16T02:14:56.425Z",
+      "source": "initial"
+    }
+  ]
+}

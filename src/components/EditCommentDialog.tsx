@@ -148,7 +148,7 @@ export function EditCommentDialog({
               <Modal.Heading>Edit Comment</Modal.Heading>
             </Modal.Header>
             <Modal.Body>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted">
                 Make changes to your comment below.
               </p>
               <Form {...form}>
@@ -195,7 +195,7 @@ export function EditCommentDialog({
                       disabled={updateCommentMutation.isPending}
                       buttonVariant="ghost"
                       buttonSize="sm"
-                      buttonClassName="text-muted-foreground"
+                      buttonClassName="text-muted"
                       buttonLabel="Add media"
                       maxFilesReachedLabel="Maximum files reached"
                       compact={false}

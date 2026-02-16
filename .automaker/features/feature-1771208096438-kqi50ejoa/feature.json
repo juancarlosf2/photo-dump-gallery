@@ -1,0 +1,17 @@
+{
+  "category": "ui",
+  "description": "Generate branded event pages with custom domain/subdomain support and live gallery updates during the event. Include editable sections for event details, sponsors, and calls to action.\n\n**Rationale:** Studios often need a polished public experience beyond internal operator tools. Microsites improve brand presence and create a stronger shareable destination.",
+  "title": "White-Label Event Microsites",
+  "status": "backlog",
+  "id": "feature-1771208096438-kqi50ejoa",
+  "descriptionHistory": [
+    {
+      "description": "Generate branded event pages with custom domain/subdomain support and live gallery updates during the event. Include editable sections for event details, sponsors, and calls to action.\n\n**Rationale:** Studios often need a polished public experience beyond internal operator tools. Microsites improve brand presence and create a stronger shareable destination.",
+      "timestamp": "2026-02-16T02:14:56.438Z",
+      "source": "initial"
+    }
+  ],
+  "model": "codex-gpt-5.3-codex",
+  "thinkingLevel": "none",
+  "branchName": "main"
+}

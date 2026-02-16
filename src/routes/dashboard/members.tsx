@@ -30,11 +30,11 @@ function MemberGridSkeleton({ count = 8 }: { count?: number }) {
       {Array.from({ length: count }).map((_, i) => (
         <Panel key={i} className="p-6">
           <div className="flex flex-col items-center text-center space-y-4">
-            <div className="h-16 w-16 rounded-full bg-muted/50 animate-pulse shrink-0" />
+            <div className="h-16 w-16 rounded-full bg-surface-secondary/50 animate-pulse shrink-0" />
             <div className="space-y-2 w-full">
-              <div className="h-4 bg-muted/50 rounded w-3/4 mx-auto animate-pulse" />
-              <div className="h-3 bg-muted/50 rounded w-full animate-pulse" />
-              <div className="h-3 bg-muted/50 rounded w-2/3 mx-auto animate-pulse" />
+              <div className="h-4 bg-surface-secondary/50 rounded w-3/4 mx-auto animate-pulse" />
+              <div className="h-3 bg-surface-secondary/50 rounded w-full animate-pulse" />
+              <div className="h-3 bg-surface-secondary/50 rounded w-2/3 mx-auto animate-pulse" />
             </div>
           </div>
         </Panel>
@@ -79,7 +79,7 @@ function Members() {
 
         {/* Search Bar */}
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted" />
           <Input
             placeholder="Search by name..."
             value={searchQuery}
@@ -89,7 +89,7 @@ function Members() {
           {searchQuery && (
             <button
               onClick={clearSearch}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted hover:text-foreground transition-colors"
               aria-label="Clear search"
             >
               <X className="w-4 h-4" />
@@ -104,7 +104,7 @@ function Members() {
               Community Members
             </h2>
             {!isLoading && data && (
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted">
                 {hasSearchQuery ? (
                   <>
                     Found{" "}
@@ -136,7 +136,7 @@ function Members() {
             </div>
           ) : (
             <EmptyState
-              icon={<Users className="h-10 w-10 text-primary/60" />}
+              icon={<Users className="h-10 w-10 text-accent/60" />}
               title={hasSearchQuery ? "No members found" : "No members yet"}
               description={
                 hasSearchQuery

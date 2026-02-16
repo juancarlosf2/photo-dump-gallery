@@ -144,7 +144,7 @@ export function CommentForm({
               disabled={createCommentMutation.isPending}
               buttonVariant="ghost"
               buttonSize="sm"
-              buttonClassName="text-muted-foreground"
+              buttonClassName="text-muted"
               buttonLabel="Add media"
               compact={false}
             />

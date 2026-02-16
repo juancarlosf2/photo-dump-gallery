@@ -19,7 +19,7 @@ export function UserNameLink({
       to="/profile/$userId"
       params={{ userId }}
       className={cn(
-        "font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded",
+        "font-medium hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded",
         className
       )}
     >

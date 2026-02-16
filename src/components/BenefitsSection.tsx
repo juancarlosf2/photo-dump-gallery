@@ -38,7 +38,7 @@ export function BenefitsSection() {
   return (
     <section id="benefits" className="w-full py-24 relative overflow-hidden">
       {/* Background blobs for this section */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <FadeIn>
@@ -46,7 +46,7 @@ export function BenefitsSection() {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mb-6 text-foreground">
               Everything You Need to <span className="text-gradient-primary">Succeed</span>
             </h2>
-            <p className="text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted sm:text-xl max-w-3xl mx-auto leading-relaxed">
               We've built a comprehensive platform that addresses every aspect of
               becoming a full stack engineer.
             </p>
@@ -59,7 +59,7 @@ export function BenefitsSection() {
              <div className="relative z-10 flex flex-col justify-between h-full">
                <div className="flex items-start justify-between">
                  <div className="rounded-lg bg-accent-soft border border-accent/20 p-3 shadow-sm">
-                   <BookOpen className="h-6 w-6 text-primary" />
+                   <BookOpen className="h-6 w-6 text-accent" />
                  </div>
                  <div className="px-3 py-1 rounded-full bg-accent-soft border border-accent/20 text-xs text-accent font-medium">
                    Step-by-step
@@ -67,10 +67,10 @@ export function BenefitsSection() {
                </div>
                <div>
                  <h3 className="text-2xl font-bold text-foreground mb-2">Structured Learning Path</h3>
-                 <p className="text-muted-foreground max-w-lg">Follow a proven curriculum designed by industry experts. No guesswork - just clear steps from beginner to full stack engineer.</p>
+                 <p className="text-muted max-w-lg">Follow a proven curriculum designed by industry experts. No guesswork - just clear steps from beginner to full stack engineer.</p>
                </div>
              </div>
-             <div className="absolute right-0 top-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-colors"></div>
+             <div className="absolute right-0 top-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] group-hover:bg-accent/20 transition-colors"></div>
           </div>
 
           {/* Tall Card */}
@@ -80,9 +80,9 @@ export function BenefitsSection() {
                  <Code className="h-6 w-6 text-accent" />
                </div>
                <h3 className="text-2xl font-bold text-foreground mb-4">Real-World Projects</h3>
-               <p className="text-muted-foreground mb-8">Build portfolio projects that showcase your skills. Learn by doing, not just watching tutorials.</p>
+               <p className="text-muted mb-8">Build portfolio projects that showcase your skills. Learn by doing, not just watching tutorials.</p>
                
-               <div className="mt-auto bg-slate-950 p-4 rounded-lg border border-border font-mono text-xs text-slate-300 overflow-hidden shadow-inner group-hover:border-primary/30 transition-colors">
+               <div className="mt-auto bg-slate-950 p-4 rounded-lg border border-border font-mono text-xs text-slate-300 overflow-hidden shadow-inner group-hover:border-accent/30 transition-colors">
                   <div className="opacity-70 select-none space-y-1">
                     <p><span className="text-purple-400">git</span> commit -m <span className="text-green-400">"feat: initial commit"</span></p>
                     <p><span className="text-purple-400">git</span> push origin main</p>
@@ -100,7 +100,7 @@ export function BenefitsSection() {
                <Users className="h-6 w-6 text-accent" />
              </div>
              <h3 className="text-xl font-bold text-foreground mb-2">Community Support</h3>
-             <p className="text-muted-foreground text-sm">Join thousands of learners. Get help, share projects, and network.</p>
+             <p className="text-muted text-sm">Join thousands of learners. Get help, share projects, and network.</p>
           </div>
 
           <div className="md:col-span-1 row-span-1 glass-card p-8 rounded-2xl group hover:bg-accent/5 transition-colors">
@@ -108,7 +108,7 @@ export function BenefitsSection() {
                <Briefcase className="h-6 w-6 text-success" />
              </div>
              <h3 className="text-xl font-bold text-foreground mb-2">Career Support</h3>
-             <p className="text-muted-foreground text-sm">Resume reviews, portfolios, and interview prep to land the job.</p>
+             <p className="text-muted text-sm">Resume reviews, portfolios, and interview prep to land the job.</p>
           </div>
 
            {/* Wide Card */}
@@ -118,14 +118,14 @@ export function BenefitsSection() {
                  <Zap className="h-6 w-6 text-warning" />
                </div>
                <h3 className="text-xl font-bold text-foreground mb-2">Practical Experience</h3>
-               <p className="text-muted-foreground text-sm">Work on real applications using modern tools and technologies.</p>
+               <p className="text-muted text-sm">Work on real applications using modern tools and technologies.</p>
              </div>
              <div className="flex-1 border-l border-border pl-6 hidden md:block">
                <div className="rounded-lg bg-accent-soft border border-accent/20 p-3 w-fit mb-4 shadow-sm">
                  <Target className="h-6 w-6 text-danger" />
                </div>
                <h3 className="text-xl font-bold text-foreground mb-2">Industry Connections</h3>
-               <p className="text-muted-foreground text-sm">Connect with experienced developers and hiring managers.</p>
+               <p className="text-muted text-sm">Connect with experienced developers and hiring managers.</p>
              </div>
            </div>
 

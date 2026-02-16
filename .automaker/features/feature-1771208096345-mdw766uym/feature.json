@@ -1,0 +1,17 @@
+{
+  "category": "ui",
+  "description": "Provide bulk select tools for applying templates, backgrounds, tags, exports, and deletes across many photos at once. Include saved filters by event, status, camera, and time to speed repetitive workflows.\n\n**Rationale:** High-volume studios need fast throughput, not one-photo-at-a-time processing. Batch controls are a standard expectation in production media workflows.",
+  "title": "Operator Batch Actions Workspace",
+  "status": "backlog",
+  "id": "feature-1771208096345-mdw766uym",
+  "descriptionHistory": [
+    {
+      "description": "Provide bulk select tools for applying templates, backgrounds, tags, exports, and deletes across many photos at once. Include saved filters by event, status, camera, and time to speed repetitive workflows.\n\n**Rationale:** High-volume studios need fast throughput, not one-photo-at-a-time processing. Batch controls are a standard expectation in production media workflows.",
+      "timestamp": "2026-02-16T02:14:56.346Z",
+      "source": "initial"
+    }
+  ],
+  "model": "codex-gpt-5.3-codex",
+  "thinkingLevel": "none",
+  "branchName": "main"
+}

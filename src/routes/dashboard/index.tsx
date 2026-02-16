@@ -90,10 +90,10 @@ function DashboardHome() {
       <div className="space-y-8">
         {/* Welcome Section */}
         <div>
-          <h1 className="text-3xl font-bold tracking-tight bg-linear-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold tracking-tight bg-linear-to-r from-accent to-purple-600 bg-clip-text text-transparent">
             Welcome back, {session?.user?.name || "there"}!
           </h1>
-          <p className="text-muted-foreground mt-2">
+          <p className="text-muted mt-2">
             Here's an overview of your Full Stack Campus dashboard
           </p>
         </div>
@@ -107,17 +107,17 @@ function DashboardHome() {
               return (
                 <Panel
                   key={link.href}
-                  className="group hover:shadow-lg transition-all duration-200 hover:border-primary/50"
+                  className="group hover:shadow-lg transition-all duration-200 hover:border-accent/50"
                 >
                   <PanelHeader className="pb-3">
                     <div className="flex items-center justify-between">
                       <Icon className={`h-8 w-8 ${link.color}`} />
-                      <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                      <ArrowRight className="h-5 w-5 text-muted group-hover:text-accent group-hover:translate-x-1 transition-all" />
                     </div>
                     <PanelTitle className="text-lg">{link.title}</PanelTitle>
                   </PanelHeader>
                   <PanelContent>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-sm text-muted mb-4">
                       {link.description}
                     </p>
                     <ButtonLink
@@ -139,7 +139,7 @@ function DashboardHome() {
           <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
           <Panel>
             <PanelContent className="pt-6">
-              <p className="text-muted-foreground text-center py-8">
+              <p className="text-muted text-center py-8">
                 Activity feed coming soon...
               </p>
             </PanelContent>

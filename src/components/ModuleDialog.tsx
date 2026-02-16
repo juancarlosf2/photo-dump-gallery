@@ -55,7 +55,7 @@ export function ModuleDialog({
               <Modal.Heading>
                 {isEditMode ? "Edit Module" : "Create Module"}
               </Modal.Heading>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted">
                 {isEditMode
                   ? "Update the module details."
                   : "Add a new module to organize educational content."}

@@ -2,6 +2,1031 @@
   "version": 1,
   "events": [
     {
+      "id": "evt-1771209191782-0010fbcd",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:33:11.782Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209189730-7c036c61",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:33:09.730Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209187686-faaaf8ca",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:33:07.686Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209185649-4830d100",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:33:05.649Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209183595-200a1d18",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:33:03.595Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209181550-0127f92e",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:33:01.550Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209179504-ce449510",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:59.504Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209177457-3b80beb2",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:57.457Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209175388-ebfdb185",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:55.388Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209173347-5570d5e4",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:53.347Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209171294-14faff25",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:51.294Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209169235-f41ee49f",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:49.235Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209167171-1e56dcb0",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:47.171Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209165119-3f4928f7",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:45.119Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209163055-1251c4bd",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:43.055Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209160979-13113e0b",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:40.979Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209158939-4d69dda1",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:38.939Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209156889-31f0f3bb",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:36.889Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209154832-b16dd867",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:34.832Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209152781-26776cf9",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:32.781Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209150719-bffdf688",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:30.719Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209148660-c4038ad7",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:28.660Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209146620-d0df7a23",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:26.621Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209144547-19fd9ce3",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:24.547Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209142480-a86c6994",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:22.480Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209140424-9919f851",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:20.425Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209138362-3443f670",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:18.362Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209136300-6e74bedc",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:16.300Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209134262-c26201c9",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:14.262Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209132207-73aa874c",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:12.207Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209130146-00fe3405",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:10.146Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209128095-d89896d8",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:08.095Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209126039-2eadc257",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:06.039Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209124000-86710096",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:04.000Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209121944-8ce2b753",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:32:01.944Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209119891-bb391016",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:59.891Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209117845-78a7a008",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:57.845Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209115796-7f1b4570",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:55.796Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209113762-79e1ba36",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:53.762Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209111741-ee509c40",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:51.741Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209109669-f1c5b0be",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:49.669Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209107616-06a5eb3f",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:47.616Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209105593-e065709c",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:45.593Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209103521-1f5095fb",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:43.521Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209101456-cf3de3ec",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:41.456Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209099394-8d5565e6",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:39.394Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209097343-0ce4419a",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:37.343Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209095279-5f70c7fc",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:35.279Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209093215-e4458cff",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:33.215Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209091147-27ebfa05",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:31.147Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209089112-d1e7ccd1",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:29.112Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209087063-54b5376d",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:27.063Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209085009-53bae760",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:25.009Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209082974-3905ae3d",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:22.974Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209080942-5f64cab4",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:20.942Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209078901-119531c0",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:18.901Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209076861-7f1409ce",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:16.861Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209074821-1610430f",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:14.821Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209072760-096cb071",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:12.760Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209070702-5fd42ffa",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:10.702Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209068642-cb725af2",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:08.642Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209066576-d9c70f9a",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:06.576Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209064520-28447759",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:04.520Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209062470-966e8c2e",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:02.470Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209060417-2d4d481d",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:31:00.417Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209058359-d011e610",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:58.359Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209056291-9f47c4ba",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:56.291Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209054256-9f45e31d",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:54.256Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209052208-31b60833",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:52.208Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209050150-fdd46c5f",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:50.150Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209048099-1ce3d24c",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:48.099Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209046037-10cc709a",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:46.037Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209044005-9aed6d54",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:44.005Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209041947-ae18d52d",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:41.947Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209039893-32cc449a",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:39.893Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209037847-7d18028f",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:37.847Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209035795-c5ad9d5b",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:35.795Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209033742-f0e140d0",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:33.742Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209031705-a7635857",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:31.705Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209029644-4000b2b2",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:29.644Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209027577-ea2e8b07",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:27.577Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209025511-64810db4",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:25.511Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209023452-30c4e003",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:23.452Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209021406-5d09c7cf",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:21.406Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209019347-542027bf",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:19.347Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209017280-23fc3019",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:17.280Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209015215-2bf87f68",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:15.215Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209013139-0558b2de",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:13.139Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209011076-92514506",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:11.076Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209009038-3e5a205b",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:09.038Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209007003-a813512c",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:07.003Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209004974-929daaf8",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:04.974Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209002926-ef908a72",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:02.926Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771209000871-2c2c8dd0",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:30:00.871Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208998817-a3919e05",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:58.817Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208996785-52d6def9",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:56.785Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208994700-a9329eec",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:54.701Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208992661-0f050f82",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:52.661Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208990604-58ae1969",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:50.604Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208988561-2a72ce18",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:48.561Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208986513-f1f7d517",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:46.513Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208984452-362cc3b1",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:44.452Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208982400-f90db6d0",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:42.400Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208980339-c98ece3d",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:40.339Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208978279-7f27600c",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:38.280Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208976249-c7b8205c",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:36.249Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208974076-c3f558c7",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:34.076Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208972027-2384a1d2",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:32.027Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208969972-3f9cd58d",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:29.972Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208967919-86345f65",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:27.919Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208965878-88a36c2d",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:25.878Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208963837-c6763a20",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:23.837Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208961774-8853686f",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:21.774Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208959707-ab572948",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:19.707Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208957639-29254e55",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:17.639Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208955591-1fa70a28",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:15.591Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208953535-b7bd6e5d",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:13.535Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208951470-65a8425e",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:11.470Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208949473-1aa5bc4e",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:09.473Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208947362-bcfd4c49",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:07.362Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208945300-f3848ab8",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:05.300Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208943265-1e1507f7",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:03.265Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208941218-bf346657",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:29:01.218Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208939206-42c51f90",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:59.206Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208937144-6e52deaa",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:57.144Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208935089-bb5ceacc",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:55.089Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208933045-4583e3e1",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:53.045Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208930999-9ae701cf",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:50.999Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208928960-19693c94",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:48.960Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208926908-3a0b14e8",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:46.908Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208924858-1dc0a104",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:44.858Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208922820-fbe1db89",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:42.820Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208920749-0b4b701e",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:40.749Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208918702-8ffa8495",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:38.702Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771208915340-e627ae10",
+      "trigger": "feature_error",
+      "timestamp": "2026-02-16T02:28:35.340Z",
+      "featureName": "Client Proofing & Approval Portal",
+      "featureId": "feature-1771208096304-dhtkrfw3q"
+    },
+    {
+      "id": "evt-1771207673417-067bacaa",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:53.417Z"
+    },
+    {
+      "id": "evt-1771207672680-5f63728a",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:52.680Z"
+    },
+    {
+      "id": "evt-1771207672076-9c5d1e59",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:52.076Z"
+    },
+    {
+      "id": "evt-1771207671607-35b403e4",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:51.607Z"
+    },
+    {
+      "id": "evt-1771207669841-245f27f9",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:49.841Z"
+    },
+    {
+      "id": "evt-1771207668970-7d6f3f39",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:48.970Z"
+    },
+    {
+      "id": "evt-1771207667616-266d2384",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:47.616Z"
+    },
+    {
+      "id": "evt-1771207666463-cee9cc3b",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:46.463Z"
+    },
+    {
+      "id": "evt-1771207666299-840f48e0",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:46.299Z"
+    },
+    {
+      "id": "evt-1771207666215-88f0b234",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:46.215Z"
+    },
+    {
+      "id": "evt-1771207666136-7e7c3893",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:46.136Z"
+    },
+    {
+      "id": "evt-1771207665984-7e1ab1c8",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:45.984Z"
+    },
+    {
+      "id": "evt-1771207665859-b9b9a1c3",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:45.859Z"
+    },
+    {
+      "id": "evt-1771207665629-14b82b92",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:45.629Z"
+    },
+    {
+      "id": "evt-1771207664802-dd8e9951",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:44.802Z"
+    },
+    {
+      "id": "evt-1771207643948-dd6f3131",
+      "trigger": "auto_mode_complete",
+      "timestamp": "2026-02-16T02:07:23.948Z"
+    },
+    {
       "id": "evt-1771207061827-c65878fd",
       "trigger": "feature_success",
       "timestamp": "2026-02-16T01:57:41.827Z",

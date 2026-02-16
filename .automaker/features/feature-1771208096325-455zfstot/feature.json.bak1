@@ -1,0 +1,14 @@
+{
+  "category": "ui",
+  "description": "Generate a unique QR code at the kiosk so guests can claim their photo session instantly on mobile. Claimed sessions open a personal mini-gallery with fast download and share actions.\n\n**Rationale:** This removes manual contact collection and long lines at busy events. It also improves delivery speed and reduces operator workload.",
+  "title": "Booth QR Session Handoff",
+  "status": "backlog",
+  "id": "feature-1771208096325-455zfstot",
+  "descriptionHistory": [
+    {
+      "description": "Generate a unique QR code at the kiosk so guests can claim their photo session instantly on mobile. Claimed sessions open a personal mini-gallery with fast download and share actions.\n\n**Rationale:** This removes manual contact collection and long lines at busy events. It also improves delivery speed and reduces operator workload.",
+      "timestamp": "2026-02-16T02:14:56.325Z",
+      "source": "initial"
+    }
+  ]
+}

@@ -279,7 +279,7 @@ export function ContentForm({
               {contentType === "pdf" && "Supported format: PDF"}
             </FormDescription>
             {file && (
-              <p className="text-sm text-muted-foreground mt-1">
+              <p className="text-sm text-muted mt-1">
                 Selected: {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
               </p>
             )}

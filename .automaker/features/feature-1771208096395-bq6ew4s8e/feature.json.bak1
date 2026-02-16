@@ -1,0 +1,14 @@
+{
+  "category": "ui",
+  "description": "Expand printing support into a full queue with statuses like queued, printing, completed, and failed. Add retry controls, printer routing, and alerts when jobs stall or fail.\n\n**Rationale:** Print fulfillment is a critical operational step for many photo booth businesses. Queue visibility and retries prevent lost orders and onsite confusion.",
+  "title": "Print Order Management Queue",
+  "status": "backlog",
+  "id": "feature-1771208096395-bq6ew4s8e",
+  "descriptionHistory": [
+    {
+      "description": "Expand printing support into a full queue with statuses like queued, printing, completed, and failed. Add retry controls, printer routing, and alerts when jobs stall or fail.\n\n**Rationale:** Print fulfillment is a critical operational step for many photo booth businesses. Queue visibility and retries prevent lost orders and onsite confusion.",
+      "timestamp": "2026-02-16T02:14:56.395Z",
+      "source": "initial"
+    }
+  ]
+}

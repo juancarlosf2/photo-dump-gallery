@@ -94,7 +94,7 @@ function FormLabel({
       data-slot="form-label"
       data-error={!!error}
       isInvalid={!!error}
-      className={cn("data-[error=true]:text-destructive", className)}
+      className={cn("data-[error=true]:text-danger", className)}
       htmlFor={props.htmlFor ?? formItemId}
       {...props}
     />
@@ -133,7 +133,7 @@ function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="form-description"
       id={formDescriptionId}
-      className={cn("text-muted-foreground text-sm", className)}
+      className={cn("text-muted text-sm", className)}
       {...props}
     />
   );
@@ -149,12 +149,12 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
 
   return (
     <p
-      className={`shake text-xs text-destructive flex items-center gap-1 animate-fadeIn ${className ?? ""}`}
+      className={`shake text-xs text-danger flex items-center gap-1 animate-fadeIn ${className ?? ""}`}
       data-slot="form-message"
       id={formMessageId}
       {...props}
     >
-      <span className="flex w-4 h-4 rounded-full bg-destructive/10 items-center justify-center text-destructive text-xs">
+      <span className="flex w-4 h-4 rounded-full bg-danger/10 items-center justify-center text-danger text-xs">
         !
       </span>
       {body}

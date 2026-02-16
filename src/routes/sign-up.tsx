@@ -103,7 +103,7 @@ function RouteComponent() {
             <h2 className="text-4xl font-bold leading-tight bg-gradient-to-r from-foreground via-foreground to-accent bg-clip-text text-transparent">
               Start creating
             </h2>
-            <p className="text-muted-foreground text-lg opacity-85">
+            <p className="text-muted text-lg opacity-85">
               Join thousands of developers sharing knowledge
             </p>
 
@@ -119,7 +119,7 @@ function RouteComponent() {
                 >
                   50K+
                 </div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wide">
+                <div className="text-xs text-muted uppercase tracking-wide">
                   Creators
                 </div>
               </div>
@@ -130,7 +130,7 @@ function RouteComponent() {
                 >
                   2M+
                 </div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wide">
+                <div className="text-xs text-muted uppercase tracking-wide">
                   Videos
                 </div>
               </div>
@@ -141,7 +141,7 @@ function RouteComponent() {
                 >
                   Free
                 </div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wide">
+                <div className="text-xs text-muted uppercase tracking-wide">
                   Forever
                 </div>
               </div>
@@ -151,7 +151,7 @@ function RouteComponent() {
 
         <footer className="relative z-20 mt-auto opacity-60">
           <div className="text-center">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted">
               Start your creator journey today
             </p>
           </div>
@@ -163,7 +163,7 @@ function RouteComponent() {
             <h1 className="text-2xl font-semibold tracking-tight animate-fadeInUp">
               Create your account
             </h1>
-            <p className="text-sm text-muted-foreground animate-fadeInUp animation-delay-100">
+            <p className="text-sm text-muted animate-fadeInUp animation-delay-100">
               Enter your information below to create your account
             </p>
           </div>
@@ -172,8 +172,8 @@ function RouteComponent() {
               <form onSubmit={form.handleSubmit(onSubmit)}>
                 <div className="grid gap-4">
                   {authError && (
-                    <div className="rounded-lg border border-destructive/50 bg-destructive/10 p-3">
-                      <p className="text-sm text-destructive">{authError}</p>
+                    <div className="rounded-lg border border-danger/50 bg-danger/10 p-3">
+                      <p className="text-sm text-danger">{authError}</p>
                     </div>
                   )}
                   <FormField
@@ -241,7 +241,7 @@ function RouteComponent() {
                               variant="ghost"
                               size="sm"
                               isIconOnly
-                              className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground hover:bg-default hover:text-foreground transition-colors"
+                              className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-8 w-8 items-center justify-center rounded-full text-muted hover:bg-default hover:text-foreground transition-colors"
                               isDisabled={isLoading}
                               aria-label={
                                 showPassword ? "Hide password" : "Show password"
@@ -266,7 +266,7 @@ function RouteComponent() {
                     className="w-full transform transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] font-medium"
                   >
                     {isLoading && (
-                      <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />
+                      <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-accent-foreground border-t-transparent" />
                     )}
                     {isLoading ? "Creating account..." : "Create Account"}
                   </Button>
@@ -278,7 +278,7 @@ function RouteComponent() {
                 <span className="w-full border-t" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">
+                <span className="bg-background px-2 text-muted">
                   Or continue with
                 </span>
               </div>
@@ -287,10 +287,10 @@ function RouteComponent() {
               variant="outline"
               type="button"
               isDisabled={isLoading}
-              className="transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] border-muted-foreground/20 hover:border-muted-foreground/40"
+              className="transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] border-separator/20 hover:border-separator/40"
             >
               {isLoading ? (
-                <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+                <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-accent border-t-transparent" />
               ) : (
                 <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
                   <path
@@ -314,10 +314,10 @@ function RouteComponent() {
               Continue with Google
             </Button>
           </div>
-          <p className="px-8 text-center text-sm text-muted-foreground">
+          <p className="px-8 text-center text-sm text-muted">
             <Link
               to="/sign-in"
-              className="underline underline-offset-4 hover:text-primary"
+              className="underline underline-offset-4 hover:text-accent"
               search={{
                 redirect: undefined,
               }}

@@ -69,9 +69,9 @@ export function SubscriptionStatus({
 
   const getStatusIcon = (status: Status | null | undefined) => {
     if (status === "past_due" || status === "unpaid") {
-      return <AlertTriangle className="h-4 w-4 text-destructive" />;
+      return <AlertTriangle className="h-4 w-4 text-danger" />;
     }
-    return <CreditCard className="h-4 w-4 text-muted-foreground" />;
+    return <CreditCard className="h-4 w-4 text-muted" />;
   };
 
   const isPaidPlan = plan !== "free";
@@ -99,7 +99,7 @@ export function SubscriptionStatus({
         <div className="flex items-center justify-between">
           <div>
             <p className="text-sm font-medium">Plan Status</p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted">
               {plan === "free" ? "Free plan - No subscription required" : 
                `${plan.charAt(0).toUpperCase() + plan.slice(1)} subscription`}
             </p>
@@ -109,12 +109,12 @@ export function SubscriptionStatus({
 
         {subscriptionExpiresAt && isPaidPlan && (
           <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-muted-foreground" />
+            <Calendar className="h-4 w-4 text-muted" />
             <div>
               <p className="text-sm font-medium">
                 {subscriptionStatus === "canceled" ? "Expires" : "Next billing date"}
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted">
                 {formatDate(subscriptionExpiresAt)}
               </p>
             </div>
@@ -122,14 +122,14 @@ export function SubscriptionStatus({
         )}
 
         {needsAttention && (
-          <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-3">
+          <div className="bg-danger/10 border border-danger/20 rounded-lg p-3">
             <div className="flex items-start gap-2">
-              <AlertTriangle className="h-4 w-4 text-destructive mt-0.5" />
+              <AlertTriangle className="h-4 w-4 text-danger mt-0.5" />
               <div>
-                <p className="text-sm font-medium text-destructive">
+                <p className="text-sm font-medium text-danger">
                   Payment Issue
                 </p>
-                <p className="text-sm text-destructive/80">
+                <p className="text-sm text-danger/80">
                   {subscriptionStatus === "past_due" 
                     ? "Your payment is past due. Please update your payment method."
                     : "Your payment failed. Please try again or update your payment method."
@@ -163,8 +163,8 @@ export function SubscriptionStatus({
         )}
 
         {plan === "free" && (
-          <div className="bg-muted/50 rounded-lg p-3">
-            <p className="text-sm text-muted-foreground">
+          <div className="bg-surface-secondary/50 rounded-lg p-3">
+            <p className="text-sm text-muted">
               You're currently on the free plan. Upgrade to unlock more features and increase your limits.
             </p>
           </div>

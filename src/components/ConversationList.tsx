@@ -17,14 +17,14 @@ export function ConversationList({
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-32">
-        <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+        <Loader2 className="h-6 w-6 animate-spin text-muted" />
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="p-4 text-center text-sm text-muted-foreground">
+      <div className="p-4 text-center text-sm text-muted">
         Failed to load conversations
       </div>
     );
@@ -33,13 +33,13 @@ export function ConversationList({
   if (!conversations || conversations.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-48 text-center p-4">
-        <div className="p-3 rounded-full bg-muted mb-3">
-          <MessageSquare className="h-6 w-6 text-muted-foreground" />
+        <div className="p-3 rounded-full bg-surface-secondary mb-3">
+          <MessageSquare className="h-6 w-6 text-muted" />
         </div>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-muted">
           No conversations yet
         </p>
-        <p className="text-xs text-muted-foreground mt-1">
+        <p className="text-xs text-muted mt-1">
           Visit a member's profile to start a conversation
         </p>
       </div>

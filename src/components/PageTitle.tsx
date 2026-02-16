@@ -15,7 +15,7 @@ export function PageTitle({
     <header className={`${center ? "text-center" : "text-left"} ${className}`}>
       <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">{title}</h1>
       {description && (
-        <p className="mt-2 text-muted-foreground">{description}</p>
+        <p className="mt-2 text-muted">{description}</p>
       )}
     </header>
   );

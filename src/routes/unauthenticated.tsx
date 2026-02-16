@@ -9,7 +9,7 @@ function RouteComponent() {
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="max-w-md w-full space-y-8 p-8">
         <div className="text-center">
-          <div className="mx-auto h-12 w-12 text-destructive mb-4">
+          <div className="mx-auto h-12 w-12 text-danger mb-4">
             <svg
               className="h-12 w-12"
               fill="none"
@@ -27,14 +27,14 @@ function RouteComponent() {
           <h2 className="text-3xl font-bold text-foreground">
             Authentication Required
           </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p className="mt-2 text-sm text-muted">
             You must be authenticated to view this route.
           </p>
         </div>
         <div className="mt-8">
           <button
             onClick={() => (window.location.href = "/sign-in")}
-            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-colors"
+            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md bg-accent text-accent-foreground hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2 transition-colors"
           >
             Sign In
           </button>

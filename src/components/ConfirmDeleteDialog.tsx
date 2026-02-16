@@ -33,7 +33,7 @@ export function ConfirmDeleteDialog({
               <AlertDialog.Heading>{title}</AlertDialog.Heading>
             </AlertDialog.Header>
             <AlertDialog.Body>
-              <p className="text-sm text-muted-foreground">{description}</p>
+              <p className="text-sm text-muted">{description}</p>
             </AlertDialog.Body>
             <AlertDialog.Footer>
               <Button

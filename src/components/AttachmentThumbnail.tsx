@@ -56,7 +56,7 @@ export function AttachmentThumbnail({
   const type = attachmentData.type;
 
   const containerClasses = cn(
-    "relative group rounded-lg overflow-hidden bg-muted",
+    "relative group rounded-lg overflow-hidden bg-surface-secondary",
     sizeClasses[size],
     onClick && "cursor-pointer",
     className
@@ -97,7 +97,7 @@ export function AttachmentThumbnail({
           {isUploadResult ? (
             <span
               className={cn(
-                "text-xs text-muted-foreground",
+                "text-xs text-muted",
                 size === "sm" && "text-[10px]"
               )}
             >
@@ -106,7 +106,7 @@ export function AttachmentThumbnail({
           ) : (
             <Loader2
               className={cn(
-                "animate-spin text-muted-foreground",
+                "animate-spin text-muted",
                 size === "sm"
                   ? "h-3 w-3"
                   : size === "md"

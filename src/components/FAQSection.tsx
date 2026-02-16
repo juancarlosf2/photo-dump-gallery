@@ -94,7 +94,7 @@ export function FAQSection() {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mb-6 text-foreground">
               Frequently Asked <span className="text-gradient-primary">Questions</span>
             </h2>
-            <p className="text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted sm:text-xl max-w-3xl mx-auto leading-relaxed">
               Everything you need to know about becoming a full stack engineer, 
               from career paths to salary expectations.
             </p>
@@ -111,15 +111,15 @@ export function FAQSection() {
                   className="px-6 border-b border-border last:border-0 transition-colors"
                 >
                   <Accordion.Heading>
-                    <Accordion.Trigger className="text-left text-base text-foreground hover:text-primary transition-colors py-6 font-medium">
+                    <Accordion.Trigger className="text-left text-base text-foreground hover:text-accent transition-colors py-6 font-medium">
                       {faq.question}
-                      <Accordion.Indicator className="ml-auto text-muted-foreground">
+                      <Accordion.Indicator className="ml-auto text-muted">
                         <ChevronDown className="h-4 w-4" />
                       </Accordion.Indicator>
                     </Accordion.Trigger>
                   </Accordion.Heading>
                   <Accordion.Panel>
-                    <Accordion.Body className="text-muted-foreground text-base leading-relaxed pb-6">
+                    <Accordion.Body className="text-muted text-base leading-relaxed pb-6">
                       {faq.answer}
                     </Accordion.Body>
                   </Accordion.Panel>

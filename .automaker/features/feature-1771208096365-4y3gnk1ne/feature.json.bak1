@@ -1,0 +1,14 @@
+{
+  "category": "ui",
+  "description": "Let each tenant define reusable brand kits with logo placement, fonts, color tokens, watermark style, and default export naming rules. Operators can apply a kit with one click when creating compositions.\n\n**Rationale:** Studios want consistent visual identity across events without rebuilding settings each time. Presets reduce setup errors and make output look more professional.",
+  "title": "Tenant Brand Kit Presets",
+  "status": "backlog",
+  "id": "feature-1771208096365-4y3gnk1ne",
+  "descriptionHistory": [
+    {
+      "description": "Let each tenant define reusable brand kits with logo placement, fonts, color tokens, watermark style, and default export naming rules. Operators can apply a kit with one click when creating compositions.\n\n**Rationale:** Studios want consistent visual identity across events without rebuilding settings each time. Presets reduce setup errors and make output look more professional.",
+      "timestamp": "2026-02-16T02:14:56.365Z",
+      "source": "initial"
+    }
+  ]
+}

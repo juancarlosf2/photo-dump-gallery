@@ -417,6 +417,7 @@ export const userRelations = relations(user, ({ one, many }) => ({
   conversationsAsParticipant1: many(conversation, { relationName: "conversationsAsParticipant1" }),
   conversationsAsParticipant2: many(conversation, { relationName: "conversationsAsParticipant2" }),
   sentMessages: many(message),
+  clientGalleries: many(clientGallery),
 }));
 
 export const userProfileRelations = relations(userProfile, ({ one }) => ({
@@ -680,3 +681,129 @@ export type CreateConversationData = typeof conversation.$inferInsert;
 
 export type Message = typeof message.$inferSelect;
 export type CreateMessageData = typeof message.$inferInsert;
+
+// Client Gallery - For studios to share photos with clients for review
+export const clientGallery = pgTable("client_gallery", {
+  id: text("id").primaryKey(),
+  name: text("name").notNull(),
+  description: text("description"),
+  studioId: text("studio_id")
+    .notNull()
+    .references(() => user.id, { onDelete: "cascade" }),
+  clientName: text("client_name"), // Name of the client (optional)
+  clientEmail: text("client_email"), // Email for notifications (optional)
+  shareToken: text("share_token").notNull().unique(), // Unique token for sharing
+  isActive: boolean("is_active")
+    .$default(() => true)
+    .notNull(),
+  expiresAt: timestamp("expires_at"), // Optional expiration date
+  allowDownload: boolean("allow_download")
+    .$default(() => false)
+    .notNull(),
+  requiresPassword: boolean("requires_password")
+    .$default(() => false)
+    .notNull(),
+  password: text("password"), // Hashed password if requiresPassword is true
+  createdAt: timestamp("created_at")
+    .$defaultFn(() => new Date())
+    .notNull(),
+  updatedAt: timestamp("updated_at")
+    .$defaultFn(() => new Date())
+    .notNull(),
+}, (table) => [
+  index("idx_client_gallery_studio_id").on(table.studioId),
+  index("idx_client_gallery_share_token").on(table.shareToken),
+  index("idx_client_gallery_is_active").on(table.isActive),
+]);
+
+// Gallery Photos - Photos within a client gallery
+export const galleryPhoto = pgTable("gallery_photo", {
+  id: text("id").primaryKey(),
+  galleryId: text("gallery_id")
+    .notNull()
+    .references(() => clientGallery.id, { onDelete: "cascade" }),
+  fileKey: text("file_key").notNull(), // R2 storage key
+  fileName: text("file_name"),
+  fileSize: integer("file_size"),
+  mimeType: text("mime_type"),
+  width: integer("width"),
+  height: integer("height"),
+  position: integer("position").$default(() => 0).notNull(),
+  createdAt: timestamp("created_at")
+    .$defaultFn(() => new Date())
+    .notNull(),
+}, (table) => [
+  index("idx_gallery_photo_gallery_id").on(table.galleryId),
+  index("idx_gallery_photo_position").on(table.galleryId, table.position),
+]);
+
+// Photo Feedback - Client feedback on individual photos
+export const photoFeedback = pgTable("photo_feedback", {
+  id: text("id").primaryKey(),
+  photoId: text("photo_id")
+    .notNull()
+    .references(() => galleryPhoto.id, { onDelete: "cascade" }),
+  galleryId: text("gallery_id")
+    .notNull()
+    .references(() => clientGallery.id, { onDelete: "cascade" }),
+  status: text("status").$default(() => "pending").notNull(), // 'pending', 'favorite', 'approved', 'rejected'
+  comment: text("comment"),
+  clientIdentifier: text("client_identifier"), // Optional: to track which client left feedback
+  createdAt: timestamp("created_at")
+    .$defaultFn(() => new Date())
+    .notNull(),
+  updatedAt: timestamp("updated_at")
+    .$defaultFn(() => new Date())
+    .notNull(),
+}, (table) => [
+  index("idx_photo_feedback_photo_id").on(table.photoId),
+  index("idx_photo_feedback_gallery_id").on(table.galleryId),
+  index("idx_photo_feedback_status").on(table.galleryId, table.status),
+]);
+
+// Relations for client gallery
+export const clientGalleryRelations = relations(clientGallery, ({ one, many }) => ({
+  studio: one(user, {
+    fields: [clientGallery.studioId],
+    references: [user.id],
+  }),
+  photos: many(galleryPhoto),
+  feedback: many(photoFeedback),
+}));
+
+export const galleryPhotoRelations = relations(galleryPhoto, ({ one, many }) => ({
+  gallery: one(clientGallery, {
+    fields: [galleryPhoto.galleryId],
+    references: [clientGallery.id],
+  }),
+  feedback: many(photoFeedback),
+}));
+
+export const photoFeedbackRelations = relations(photoFeedback, ({ one }) => ({
+  photo: one(galleryPhoto, {
+    fields: [photoFeedback.photoId],
+    references: [galleryPhoto.id],
+  }),
+  gallery: one(clientGallery, {
+    fields: [photoFeedback.galleryId],
+    references: [clientGallery.id],
+  }),
+}));
+
+// Types for client gallery
+export type ClientGallery = typeof clientGallery.$inferSelect;
+export type CreateClientGalleryData = typeof clientGallery.$inferInsert;
+export type UpdateClientGalleryData = Partial<
+  Omit<CreateClientGalleryData, "id" | "createdAt" | "studioId">
+>;
+
+export type GalleryPhoto = typeof galleryPhoto.$inferSelect;
+export type CreateGalleryPhotoData = typeof galleryPhoto.$inferInsert;
+
+export type PhotoFeedback = typeof photoFeedback.$inferSelect;
+export type CreatePhotoFeedbackData = typeof photoFeedback.$inferInsert;
+export type UpdatePhotoFeedbackData = Partial<
+  Omit<CreatePhotoFeedbackData, "id" | "createdAt" | "photoId" | "galleryId">
+>;
+
+export type PhotoFeedbackStatus = "pending" | "favorite" | "approved" | "rejected";

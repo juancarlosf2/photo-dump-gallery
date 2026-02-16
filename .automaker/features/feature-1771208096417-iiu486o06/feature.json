@@ -1,0 +1,17 @@
+{
+  "category": "ui",
+  "description": "Run automatic checks after capture/upload for blur, poor exposure, eyes closed, and near-duplicate shots. Flag issues immediately and suggest recapture while participants are still present.\n\n**Rationale:** Quality issues discovered later create rework and unhappy clients. Early detection protects output quality and reduces downstream edits.",
+  "title": "Photo Quality Gate at Intake",
+  "status": "backlog",
+  "id": "feature-1771208096417-iiu486o06",
+  "descriptionHistory": [
+    {
+      "description": "Run automatic checks after capture/upload for blur, poor exposure, eyes closed, and near-duplicate shots. Flag issues immediately and suggest recapture while participants are still present.\n\n**Rationale:** Quality issues discovered later create rework and unhappy clients. Early detection protects output quality and reduces downstream edits.",
+      "timestamp": "2026-02-16T02:14:56.418Z",
+      "source": "initial"
+    }
+  ],
+  "model": "codex-gpt-5.3-codex",
+  "thinkingLevel": "none",
+  "branchName": "main"
+}

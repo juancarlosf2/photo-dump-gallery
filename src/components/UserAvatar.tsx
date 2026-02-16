@@ -37,7 +37,7 @@ export function UserAvatar({
   return (
     <Avatar className={`${sizeMap[size]} ${className}`}>
       {avatarUrl && <Avatar.Image src={avatarUrl} alt={name || "User"} />}
-      <Avatar.Fallback className="bg-gradient-to-br from-primary to-purple-600 text-primary-foreground font-semibold">
+      <Avatar.Fallback className="bg-gradient-to-br from-accent to-purple-600 text-accent-foreground font-semibold">
         {fallbackText}
       </Avatar.Fallback>
     </Avatar>

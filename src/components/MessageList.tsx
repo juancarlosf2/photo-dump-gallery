@@ -43,7 +43,7 @@ export function MessageList({ conversationId }: MessageListProps) {
   if (isLoading) {
     return (
       <div className="flex-1 flex items-center justify-center">
-        <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+        <Loader2 className="h-6 w-6 animate-spin text-muted" />
       </div>
     );
   }
@@ -51,7 +51,7 @@ export function MessageList({ conversationId }: MessageListProps) {
   if (error) {
     return (
       <div className="flex-1 flex items-center justify-center">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-muted">
           Failed to load messages
         </p>
       </div>
@@ -61,7 +61,7 @@ export function MessageList({ conversationId }: MessageListProps) {
   if (!data?.messages || data.messages.length === 0) {
     return (
       <div className="flex-1 flex items-center justify-center">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-muted">
           No messages yet. Say hello!
         </p>
       </div>
@@ -97,7 +97,7 @@ export function MessageList({ conversationId }: MessageListProps) {
       {groupedMessages.map((group) => (
         <div key={group.date} className="space-y-3">
           <div className="flex items-center justify-center">
-            <span className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full">
+            <span className="text-xs text-muted bg-surface-secondary px-3 py-1 rounded-full">
               {group.date}
             </span>
           </div>

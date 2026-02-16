@@ -1,0 +1,11 @@
+{
+  "id": "evt-1771208965878-88a36c2d",
+  "trigger": "feature_error",
+  "timestamp": "2026-02-16T02:29:25.878Z",
+  "projectPath": "/Users/sonofzeus/Documents/Automaker/photo-dump-gallery",
+  "projectName": "photo-dump-gallery",
+  "featureId": "feature-1771208096304-dhtkrfw3q",
+  "featureName": "Client Proofing & Approval Portal",
+  "error": "Claude CLI is disconnected from the app. Please go to Settings > Providers and click \"Sign In\" to reconnect.",
+  "errorType": "execution"
+}

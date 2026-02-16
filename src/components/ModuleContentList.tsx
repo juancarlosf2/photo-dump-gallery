@@ -60,7 +60,7 @@ function ContentItem({ content, isAdmin, moduleId }: ContentItemProps) {
               embedUrl = `https://player.vimeo.com/video/${videoId}`;
             }
             return (
-              <div className="aspect-video rounded-lg overflow-hidden bg-muted">
+              <div className="aspect-video rounded-lg overflow-hidden bg-surface-secondary">
                 <iframe
                   src={embedUrl}
                   className="w-full h-full"
@@ -82,7 +82,7 @@ function ContentItem({ content, isAdmin, moduleId }: ContentItemProps) {
             </video>
           );
         }
-        return <p className="text-muted-foreground text-sm">No video available</p>;
+        return <p className="text-muted text-sm">No video available</p>;
 
       case "image":
         if (content.url) {
@@ -94,7 +94,7 @@ function ContentItem({ content, isAdmin, moduleId }: ContentItemProps) {
             />
           );
         }
-        return <p className="text-muted-foreground text-sm">No image available</p>;
+        return <p className="text-muted text-sm">No image available</p>;
 
       case "pdf":
         if (content.url) {
@@ -104,7 +104,7 @@ function ContentItem({ content, isAdmin, moduleId }: ContentItemProps) {
                 href={content.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-primary hover:underline"
+                className="flex items-center gap-2 text-accent hover:underline"
               >
                 <File className="h-5 w-5" />
                 View PDF
@@ -113,7 +113,7 @@ function ContentItem({ content, isAdmin, moduleId }: ContentItemProps) {
             </div>
           );
         }
-        return <p className="text-muted-foreground text-sm">No PDF available</p>;
+        return <p className="text-muted text-sm">No PDF available</p>;
 
       case "text":
       case "task":
@@ -124,7 +124,7 @@ function ContentItem({ content, isAdmin, moduleId }: ContentItemProps) {
             </div>
           );
         }
-        return <p className="text-muted-foreground text-sm">No content available</p>;
+        return <p className="text-muted text-sm">No content available</p>;
 
       default:
         return null;
@@ -139,12 +139,12 @@ function ContentItem({ content, isAdmin, moduleId }: ContentItemProps) {
             onClick={() => setExpanded(!expanded)}
             className="flex items-center gap-3 text-left flex-1 min-w-0 hover:opacity-80"
           >
-            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Icon className="h-5 w-5 text-primary" />
+            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+              <Icon className="h-5 w-5 text-accent" />
             </div>
             <div className="flex-1 min-w-0">
               <h4 className="font-medium text-sm line-clamp-1">{content.title}</h4>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-muted">
                 {CONTENT_TYPE_LABELS[content.type as ModuleContentType]}
               </p>
             </div>
@@ -155,7 +155,7 @@ function ContentItem({ content, isAdmin, moduleId }: ContentItemProps) {
               variant="ghost"
               size="sm"
               isIconOnly
-              className="text-destructive hover:text-destructive shrink-0"
+              className="text-danger hover:text-danger shrink-0"
               onPress={() => setDeleteDialogOpen(true)}
             >
               <Trash2 className="h-4 w-4" />
@@ -164,7 +164,7 @@ function ContentItem({ content, isAdmin, moduleId }: ContentItemProps) {
         </div>
 
         {content.description && (
-          <p className="text-sm text-muted-foreground">{content.description}</p>
+          <p className="text-sm text-muted">{content.description}</p>
         )}
 
         {expanded && (
@@ -200,10 +200,10 @@ export function ModuleContentList({ moduleId, isAdmin }: ModuleContentListProps)
         {Array.from({ length: 2 }).map((_, i) => (
           <div key={i} className="border rounded-lg p-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-muted animate-pulse" />
+              <div className="w-10 h-10 rounded-lg bg-surface-secondary animate-pulse" />
               <div className="flex-1 space-y-2">
-                <div className="h-4 bg-muted rounded w-1/3 animate-pulse" />
-                <div className="h-3 bg-muted rounded w-1/4 animate-pulse" />
+                <div className="h-4 bg-surface-secondary rounded w-1/3 animate-pulse" />
+                <div className="h-3 bg-surface-secondary rounded w-1/4 animate-pulse" />
               </div>
             </div>
           </div>
@@ -215,8 +215,8 @@ export function ModuleContentList({ moduleId, isAdmin }: ModuleContentListProps)
   if (!contents || contents.length === 0) {
     return (
       <div className="py-8 text-center">
-        <FileText className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
-        <p className="text-sm text-muted-foreground">
+        <FileText className="h-8 w-8 text-muted mx-auto mb-2" />
+        <p className="text-sm text-muted">
           {isAdmin
             ? "No content yet. Click the + button to add content."
             : "No content available in this module."}

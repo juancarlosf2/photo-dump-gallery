@@ -22,7 +22,7 @@ export function UserAvatarLink({
     <Link
       to="/profile/$userId"
       params={{ userId }}
-      className={`inline-block hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-full ${className}`}
+      className={`inline-block hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded-full ${className}`}
     >
       <UserAvatar imageKey={imageKey} name={name} email={email} size={size} />
     </Link>

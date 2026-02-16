@@ -41,8 +41,8 @@ export function ConversationItem({
       className={cn(
         "w-full p-3 flex items-start gap-3 text-left transition-colors rounded-lg",
         isActive
-          ? "bg-primary/10 border-l-2 border-primary"
-          : "hover:bg-muted/50"
+          ? "bg-accent/10 border-l-2 border-accent"
+          : "hover:bg-surface-secondary/50"
       )}
     >
       <UserAvatar
@@ -60,7 +60,7 @@ export function ConversationItem({
             {otherParticipant.name}
           </span>
           {lastMessage && (
-            <span className="text-xs text-muted-foreground shrink-0">
+            <span className="text-xs text-muted shrink-0">
               {formatTimeAgo(lastMessage.createdAt)}
             </span>
           )}
@@ -71,7 +71,7 @@ export function ConversationItem({
             "text-sm truncate mt-0.5",
             unreadCount > 0
               ? "text-foreground font-medium"
-              : "text-muted-foreground"
+              : "text-muted"
           )}>
             {lastMessage.content}
           </p>
@@ -79,7 +79,7 @@ export function ConversationItem({
       </div>
 
       {unreadCount > 0 && (
-        <span className="shrink-0 h-5 min-w-5 px-1.5 rounded-full bg-primary text-primary-foreground text-xs font-medium flex items-center justify-center">
+        <span className="shrink-0 h-5 min-w-5 px-1.5 rounded-full bg-accent text-accent-foreground text-xs font-medium flex items-center justify-center">
           {unreadCount > 99 ? "99+" : unreadCount}
         </span>
       )}

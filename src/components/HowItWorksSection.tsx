@@ -45,7 +45,7 @@ const steps = [
 export function HowItWorksSection() {
   return (
     <section id="how-it-works" className="w-full py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent pointer-events-none"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <FadeIn>
@@ -53,7 +53,7 @@ export function HowItWorksSection() {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mb-6 text-foreground">
               How It <span className="text-gradient-primary">Works</span>
             </h2>
-            <p className="text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted sm:text-xl max-w-3xl mx-auto leading-relaxed">
               A clear, proven path from beginner to full stack engineer. No
               confusion, no guesswork.
             </p>
@@ -63,7 +63,7 @@ export function HowItWorksSection() {
         <div className="max-w-6xl mx-auto">
           <div className="relative">
              {/* Connector Line (Desktop) */}
-            <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -z-10"></div>
+            <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent -z-10"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {steps.map((step, index) => {
@@ -71,21 +71,21 @@ export function HowItWorksSection() {
                 return (
                   <FadeIn key={index} delay={index * 150} className="h-full">
                     <div className="flex flex-col items-center text-center group">
-                      <div className="w-24 h-24 rounded-full bg-card border-2 border-primary/30 flex items-center justify-center mb-6 shadow-[0_0_20px_color-mix(in_oklab,var(--accent)_20%,transparent)] group-hover:scale-110 transition-transform z-10 relative overflow-hidden">
+                      <div className="w-24 h-24 rounded-full bg-surface border-2 border-accent/30 flex items-center justify-center mb-6 shadow-[0_0_20px_color-mix(in_oklab,var(--accent)_20%,transparent)] group-hover:scale-110 transition-transform z-10 relative overflow-hidden">
                         <span className="font-mono font-bold text-3xl text-foreground relative z-10">{step.number}</span>
-                         <div className="absolute inset-0 rounded-full border border-dashed border-primary/50 animate-spin-slow"></div>
-                         <div className="absolute inset-0 bg-primary/10 rounded-full blur-xl group-hover:bg-primary/20 transition-colors"></div>
+                         <div className="absolute inset-0 rounded-full border border-dashed border-accent/50 animate-spin-slow"></div>
+                         <div className="absolute inset-0 bg-accent/10 rounded-full blur-xl group-hover:bg-accent/20 transition-colors"></div>
                       </div>
                       
                       <div className="glass-card p-6 rounded-2xl w-full flex-1 hover:-translate-y-1 transition-transform border-t-4 border-t-primary/50">
-                        <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/50 border border-border text-xs text-primary font-medium">
+                        <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/50 border border-border text-xs text-accent font-medium">
                           <Icon className="h-3 w-3" />
                           {step.timeline}
                         </div>
                         <h3 className="text-lg font-bold text-foreground mb-2">
                           {step.title}
                         </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
+                        <p className="text-muted text-sm leading-relaxed">
                           {step.description}
                         </p>
                       </div>

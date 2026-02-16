@@ -1,0 +1,14 @@
+{
+  "category": "ui",
+  "description": "Create post-event delivery workflows that send gallery links via email or SMS on configurable schedules. Add reminder sends for unopened links and optional reactivation if a link has expired.\n\n**Rationale:** Manual delivery follow-up is easy to miss and hurts satisfaction. Automation increases successful handoffs and can improve repeat bookings.",
+  "title": "Automated Delivery Campaigns",
+  "status": "backlog",
+  "id": "feature-1771208096380-lma72g98p",
+  "descriptionHistory": [
+    {
+      "description": "Create post-event delivery workflows that send gallery links via email or SMS on configurable schedules. Add reminder sends for unopened links and optional reactivation if a link has expired.\n\n**Rationale:** Manual delivery follow-up is easy to miss and hurts satisfaction. Automation increases successful handoffs and can improve repeat bookings.",
+      "timestamp": "2026-02-16T02:14:56.380Z",
+      "source": "initial"
+    }
+  ]
+}

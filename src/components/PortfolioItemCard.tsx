@@ -43,9 +43,9 @@ export function PortfolioItemCard({
 
   return (
     <>
-      <Panel className="group overflow-hidden border-border/60 hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
+      <Panel className="group overflow-hidden border-border/60 hover:border-accent/30 transition-all duration-300 hover:shadow-lg">
         {/* Image */}
-        <div className="relative aspect-video bg-muted overflow-hidden">
+        <div className="relative aspect-video bg-surface-secondary overflow-hidden">
           {imageUrl ? (
             <img
               src={imageUrl}
@@ -53,8 +53,8 @@ export function PortfolioItemCard({
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
-              <ImageIcon className="h-12 w-12 text-muted-foreground/50" />
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-surface-secondary to-surface-secondary/50">
+              <ImageIcon className="h-12 w-12 text-muted/50" />
             </div>
           )}
 
@@ -95,7 +95,7 @@ export function PortfolioItemCard({
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="shrink-0 text-muted-foreground hover:text-primary transition-colors"
+                className="shrink-0 text-muted hover:text-accent transition-colors"
               >
                 <ExternalLink className="h-4 w-4" />
               </a>
@@ -135,7 +135,7 @@ export function PortfolioItemCard({
             <Modal.Dialog className="sm:max-w-md">
               <Modal.Header>
                 <Modal.Heading>Delete Portfolio Item</Modal.Heading>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted">
                   Are you sure you want to delete "{item.title}"? This action cannot be undone.
                 </p>
               </Modal.Header>

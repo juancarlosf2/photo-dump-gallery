@@ -41,8 +41,8 @@ export function MessageItem({
         className={cn(
           "max-w-[70%] rounded-2xl px-4 py-2",
           isOwnMessage
-            ? "bg-primary text-primary-foreground rounded-br-md"
-            : "bg-muted rounded-bl-md"
+            ? "bg-accent text-accent-foreground rounded-br-md"
+            : "bg-surface-secondary rounded-bl-md"
         )}
       >
         <p className="text-sm whitespace-pre-wrap break-words">
@@ -52,8 +52,8 @@ export function MessageItem({
           className={cn(
             "text-xs mt-1",
             isOwnMessage
-              ? "text-primary-foreground/70"
-              : "text-muted-foreground"
+              ? "text-accent-foreground/70"
+              : "text-muted"
           )}
         >
           {formatMessageTime(message.createdAt)}

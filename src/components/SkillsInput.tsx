@@ -58,7 +58,7 @@ export function SkillsInput({
                 <button
                   type="button"
                   onClick={() => removeSkill(skill)}
-                  className="ml-2 text-muted-foreground hover:text-foreground transition-colors"
+                  className="ml-2 text-muted hover:text-foreground transition-colors"
                   aria-label={`Remove ${skill}`}
                 >
                   <X className="h-3 w-3" />
@@ -95,7 +95,7 @@ export function SkillsInput({
       )}
 
       {/* Counter */}
-      <p className="text-xs text-muted-foreground">
+      <p className="text-xs text-muted">
         {skills.length} / {maxSkills} skills
         {skills.length < maxSkills && " • Press Enter to add"}
       </p>

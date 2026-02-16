@@ -70,14 +70,14 @@ export function CommentItem({
                   name={comment.user.name}
                   className="text-sm"
                 />
-                <span className="text-xs text-muted-foreground flex items-center gap-1">
+                <span className="text-xs text-muted flex items-center gap-1">
                   <Clock className="h-3 w-3" />
                   {formatRelativeTime(
                     new Date(comment.createdAt).toISOString()
                   )}
                 </span>
                 {isEdited && (
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-xs text-muted">
                     (edited)
                   </span>
                 )}
@@ -102,7 +102,7 @@ export function CommentItem({
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="h-7 text-xs text-muted-foreground hover:text-foreground"
+                    className="h-7 text-xs text-muted hover:text-foreground"
                     onPress={() => setShowReplyForm(!showReplyForm)}
                   >
                     <MessageSquare className="h-3 w-3 mr-1" />
@@ -114,7 +114,7 @@ export function CommentItem({
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="h-7 text-xs text-muted-foreground hover:text-foreground"
+                      className="h-7 text-xs text-muted hover:text-foreground"
                       onPress={() => setEditDialogOpen(true)}
                     >
                       <Edit className="h-3 w-3 mr-1" />
@@ -123,7 +123,7 @@ export function CommentItem({
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="h-7 text-xs text-destructive hover:text-destructive"
+                      className="h-7 text-xs text-danger hover:text-danger"
                       onPress={() => setDeleteDialogOpen(true)}
                     >
                       <Trash2 className="h-3 w-3 mr-1" />
@@ -154,7 +154,7 @@ export function CommentItem({
       {hasReplies && (
         <div className="mt-2 space-y-2">
           {repliesLoading ? (
-            <div className="ml-6 text-sm text-muted-foreground">
+            <div className="ml-6 text-sm text-muted">
               Loading replies...
             </div>
           ) : (

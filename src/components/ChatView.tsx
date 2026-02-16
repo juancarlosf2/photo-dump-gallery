@@ -20,13 +20,13 @@ export function ChatView({
   if (!conversation) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center text-center p-8">
-        <div className="p-4 rounded-full bg-muted mb-4">
-          <MessageSquare className="h-8 w-8 text-muted-foreground" />
+        <div className="p-4 rounded-full bg-surface-secondary mb-4">
+          <MessageSquare className="h-8 w-8 text-muted" />
         </div>
         <h2 className="text-lg font-semibold text-foreground mb-2">
           Select a conversation
         </h2>
-        <p className="text-sm text-muted-foreground max-w-sm">
+        <p className="text-sm text-muted max-w-sm">
           Choose a conversation from the sidebar to start messaging, or visit a
           member's profile to start a new conversation.
         </p>
@@ -64,7 +64,7 @@ export function ChatView({
             <h2 className="font-semibold text-foreground">
               {conversation.otherParticipant.name}
             </h2>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-muted">
               Click to view profile
             </p>
           </div>

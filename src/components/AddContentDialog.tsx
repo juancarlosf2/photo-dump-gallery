@@ -35,7 +35,7 @@ export function AddContentDialog({
               <Modal.Heading>Add Content</Modal.Heading>
             </Modal.Header>
             <Modal.Body>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted">
                 Add content to "{moduleTitle}". You can add videos, tasks, PDFs,
                 images, or text.
               </p>

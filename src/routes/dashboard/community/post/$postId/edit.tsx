@@ -73,10 +73,10 @@ function EditPost() {
       <Page>
         <div className="space-y-6 max-w-4xl mx-auto">
           <div className="animate-pulse space-y-4">
-            <div className="h-4 bg-muted rounded w-1/3"></div>
-            <div className="h-8 bg-muted rounded w-2/3"></div>
-            <div className="h-4 bg-muted rounded w-1/4"></div>
-            <div className="h-32 bg-muted rounded"></div>
+            <div className="h-4 bg-surface-secondary rounded w-1/3"></div>
+            <div className="h-8 bg-surface-secondary rounded w-2/3"></div>
+            <div className="h-4 bg-surface-secondary rounded w-1/4"></div>
+            <div className="h-32 bg-surface-secondary rounded"></div>
           </div>
         </div>
       </Page>
@@ -87,16 +87,16 @@ function EditPost() {
     return (
       <Page>
         <div className="text-center space-y-4 py-12">
-          <h1 className="text-2xl font-bold text-destructive">
+          <h1 className="text-2xl font-bold text-danger">
             Post Not Found
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-muted">
             The post you're looking for doesn't exist or has been removed.
           </p>
           <Link
             to="/dashboard/community"
             search={{ category: undefined }}
-            className="text-primary hover:underline inline-flex items-center gap-2"
+            className="text-accent hover:underline inline-flex items-center gap-2"
           >
             <Users className="h-4 w-4" />
             Back to Community
@@ -110,14 +110,14 @@ function EditPost() {
     return (
       <Page>
         <div className="text-center space-y-4 py-12">
-          <h1 className="text-2xl font-bold text-destructive">Unauthorized</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-2xl font-bold text-danger">Unauthorized</h1>
+          <p className="text-muted">
             You can only edit your own posts.
           </p>
           <Link
             to="/dashboard/community/post/$postId"
             params={{ postId }}
-            className="text-primary hover:underline inline-flex items-center gap-2"
+            className="text-accent hover:underline inline-flex items-center gap-2"
           >
             <MessageSquare className="h-4 w-4" />
             Back to Post

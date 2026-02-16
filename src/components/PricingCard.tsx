@@ -87,7 +87,7 @@ export function PricingCard({
         "relative p-8 rounded-2xl transition-all duration-300 flex flex-col h-full bg-surface border-separator hover:-translate-y-1",
         isPopular &&
           "gradient-border bg-surface-secondary shadow-[var(--shadow-surface)] scale-105 z-10",
-        isCurrentPlan && "ring-2 ring-primary"
+        isCurrentPlan && "ring-2 ring-accent"
       )}
     >
       {isPopular && (
@@ -106,7 +106,7 @@ export function PricingCard({
             ${plan.price === 0 ? "0" : formatPrice(plan.price)}
           </span>
           {plan.price > 0 && (
-            <span className="text-muted-foreground font-medium">/month</span>
+            <span className="text-muted font-medium">/month</span>
           )}
         </div>
 
@@ -125,7 +125,7 @@ export function PricingCard({
               <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-soft flex items-center justify-center mt-0.5">
                 <Check className="h-3.5 w-3.5 text-accent" />
               </div>
-              <span className="text-muted-foreground text-sm leading-relaxed">
+              <span className="text-muted text-sm leading-relaxed">
                 {feature}
               </span>
             </li>

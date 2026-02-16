@@ -45,7 +45,7 @@ export function CommunitySection() {
     <section id="community" className="w-full py-24 relative overflow-hidden bg-background">
       {/* Map Background (Simulated with radial gradients) */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute top-[20%] left-[20%] w-96 h-96 bg-primary/20 rounded-full blur-[120px]"></div>
+          <div className="absolute top-[20%] left-[20%] w-96 h-96 bg-accent/20 rounded-full blur-[120px]"></div>
           <div className="absolute bottom-[20%] right-[20%] w-96 h-96 bg-purple-500/20 rounded-full blur-[120px]"></div>
       </div>
 
@@ -53,9 +53,9 @@ export function CommunitySection() {
         <FadeIn>
           <div className="text-center mb-20">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-6xl mb-6 text-foreground">
-              Global <span className="text-primary">Community</span>
+              Global <span className="text-accent">Community</span>
             </h2>
-            <p className="text-lg text-muted-foreground sm:text-xl max-w-2xl mx-auto">
+            <p className="text-lg text-muted sm:text-xl max-w-2xl mx-auto">
               Join a network of developers who are building the future.
             </p>
           </div>
@@ -68,19 +68,19 @@ export function CommunitySection() {
               <FadeIn key={index} delay={index * 100} className="h-full">
                 <div className="flex flex-col items-center text-center group">
                   <div className="mb-6 relative">
-                    <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <Icon className="h-10 w-10 text-muted-foreground group-hover:text-primary transition-colors relative z-10" />
+                    <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <Icon className="h-10 w-10 text-muted group-hover:text-accent transition-colors relative z-10" />
                   </div>
                   
                   <h3 className="text-5xl md:text-6xl font-bold mb-4 tracking-tighter text-foreground group-hover:scale-110 transition-transform duration-300">
                     {feature.stat}
                   </h3>
                   
-                  <div className="text-lg font-bold text-primary mb-2 uppercase tracking-widest text-xs">
+                  <div className="text-lg font-bold text-accent mb-2 uppercase tracking-widest text-xs">
                     {feature.label}
                   </div>
                   
-                  <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
+                  <p className="text-muted text-sm max-w-xs leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -97,7 +97,7 @@ export function CommunitySection() {
               <div className="text-xl font-bold text-foreground flex items-center gap-2"><div className="w-6 h-6 bg-foreground rounded-sm rotate-45"></div> TECH CORP</div>
               <div className="text-xl font-bold text-foreground flex items-center gap-2"><div className="w-6 h-6 bg-foreground rounded-full border-2 border-black dark:border-white"></div> STUDIO</div>
            </div>
-           <p className="text-center text-xs text-muted-foreground mt-4 uppercase tracking-widest">Graduates Hired By</p>
+           <p className="text-center text-xs text-muted mt-4 uppercase tracking-widest">Graduates Hired By</p>
         </FadeIn>
       </div>
     </section>

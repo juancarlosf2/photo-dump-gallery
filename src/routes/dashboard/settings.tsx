@@ -103,8 +103,8 @@ function SettingsNavigation({
             className={cn(
               "w-full flex items-center gap-2 px-2 py-2 text-sm rounded-md transition-colors text-left",
               isActive
-                ? "bg-primary/20 text-primary font-medium"
-                : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
+                ? "bg-accent/20 text-accent font-medium"
+                : "text-muted hover:bg-white/5 hover:text-foreground"
             )}
           >
             <Icon className="h-4 w-4 flex-shrink-0" />
@@ -126,7 +126,7 @@ function SectionHeader({
   return (
     <div className="mb-6">
       <h2 className="text-2xl font-bold text-foreground mb-2">{title}</h2>
-      {description && <p className="text-muted-foreground">{description}</p>}
+      {description && <p className="text-muted">{description}</p>}
     </div>
   );
 }
@@ -188,7 +188,7 @@ function AccountDeletionSettings() {
             <h3 className="font-semibold text-red-600 dark:text-red-400 mb-2">
               Delete Account
             </h3>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-muted mb-4">
               Permanently delete your account and all associated data. This
               action cannot be undone. All your subscription data will be
               permanently removed.
@@ -219,7 +219,7 @@ function AccountDeletionSettings() {
               </Modal.Header>
 
               <Modal.Body>
-                <p className="text-left text-sm text-muted-foreground">
+                <p className="text-left text-sm text-muted">
                   This will permanently delete your account and all data associated
                   with it.
                 </p>
@@ -229,7 +229,7 @@ function AccountDeletionSettings() {
                     <p className="text-sm text-foreground">
                       The following data will be permanently deleted:
                     </p>
-                    <ul className="text-sm text-muted-foreground list-disc list-inside space-y-1">
+                    <ul className="text-sm text-muted list-disc list-inside space-y-1">
                       <li>All liked posts and hearts</li>
                       <li>Your subscription and billing information</li>
                       <li>Your profile and account settings</li>
@@ -250,7 +250,7 @@ function AccountDeletionSettings() {
                           <FormLabel className="text-foreground">
                             To confirm, type your email address:
                           </FormLabel>
-                          <p className="text-sm text-muted-foreground font-mono mb-2">
+                          <p className="text-sm text-muted font-mono mb-2">
                             {session?.user?.email}
                           </p>
                           <FormControl>
@@ -434,12 +434,12 @@ function ProfileSettings() {
                 )}
               </div>
               {isDragActive && (
-                <div className="absolute inset-0 border-2 border-dashed border-primary bg-primary/20 rounded-full flex items-center justify-center">
-                  <Upload className="h-4 w-4 text-primary" />
+                <div className="absolute inset-0 border-2 border-dashed border-accent bg-accent/20 rounded-full flex items-center justify-center">
+                  <Upload className="h-4 w-4 text-accent" />
                 </div>
               )}
             </div>
-            <p className="text-xs text-muted-foreground text-center">
+            <p className="text-xs text-muted text-center">
               Click to upload
               <br />
               PNG, JPG, GIF up to 5MB
@@ -607,7 +607,7 @@ function SettingsPage() {
               {Array.from({ length: 5 }).map((_, i) => (
                 <div
                   key={i}
-                  className="h-10 bg-muted/50 animate-pulse rounded"
+                  className="h-10 bg-surface-secondary/50 animate-pulse rounded"
                 />
               ))}
             </div>
@@ -617,9 +617,9 @@ function SettingsPage() {
           <div className="flex-1 space-y-6 overflow-y-auto pr-2">
             <Panel className="p-6">
               <div className="space-y-4">
-                <div className="h-6 bg-muted/50 animate-pulse rounded w-1/3" />
-                <div className="h-4 bg-muted/50 animate-pulse rounded w-2/3" />
-                <div className="h-4 bg-muted/50 animate-pulse rounded w-1/2" />
+                <div className="h-6 bg-surface-secondary/50 animate-pulse rounded w-1/3" />
+                <div className="h-4 bg-surface-secondary/50 animate-pulse rounded w-2/3" />
+                <div className="h-4 bg-surface-secondary/50 animate-pulse rounded w-1/2" />
               </div>
             </Panel>
           </div>

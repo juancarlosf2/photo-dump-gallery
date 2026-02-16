@@ -78,7 +78,7 @@ function PostCard({ post, isAdmin }: { post: PostWithUser; isAdmin: boolean }) {
       case "showcase":
         return "bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20";
       default:
-        return "bg-muted text-muted-foreground border-border";
+        return "bg-surface-secondary text-muted border-border";
     }
   };
 
@@ -97,14 +97,14 @@ function PostCard({ post, isAdmin }: { post: PostWithUser; isAdmin: boolean }) {
 
   return (
     <>
-      <Panel className="overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 group relative p-5">
+      <Panel className="overflow-hidden hover:shadow-lg hover:border-accent/30 transition-all duration-300 group relative p-5">
         <div className="flex items-start gap-4">
           <UserAvatarLink
             userId={post.user.id}
             imageKey={post.user.image}
             name={post.user.name}
             size="md"
-            className="shrink-0 ring-2 ring-transparent group-hover:ring-primary/20 transition-all"
+            className="shrink-0 ring-2 ring-transparent group-hover:ring-accent/20 transition-all"
           />
 
           <div className="flex-1 min-w-0">
@@ -114,14 +114,14 @@ function PostCard({ post, isAdmin }: { post: PostWithUser; isAdmin: boolean }) {
                 name={post.user.name}
                 className="text-sm font-medium"
               />
-              <span className="text-muted-foreground text-xs">
+              <span className="text-muted text-xs">
                 {formatRelativeTime(new Date(post.createdAt).toISOString())}
               </span>
               {post.isPinned && (
                 <Chip
                   variant="secondary"
                   color="accent"
-                  className="text-xs px-1.5 py-0 gap-1 bg-primary/10 text-primary border-primary/20"
+                  className="text-xs px-1.5 py-0 gap-1 bg-accent/10 text-accent border-accent/20"
                 >
                   <Pin className="h-3 w-3" />
                   Pinned
@@ -135,13 +135,13 @@ function PostCard({ post, isAdmin }: { post: PostWithUser; isAdmin: boolean }) {
                 params={{ postId: post.id }}
                 className="block"
               >
-                <h3 className="font-semibold text-base leading-tight mb-2 hover:text-primary transition-colors line-clamp-2">
+                <h3 className="font-semibold text-base leading-tight mb-2 hover:text-accent transition-colors line-clamp-2">
                   {post.title}
                 </h3>
               </Link>
             )}
 
-            <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 mb-3">
+            <p className="text-muted text-sm leading-relaxed line-clamp-3 mb-3">
               {truncateContent(post.content)}
             </p>
 
@@ -181,7 +181,7 @@ function PostCard({ post, isAdmin }: { post: PostWithUser; isAdmin: boolean }) {
                 <Link
                   to="/dashboard/community/post/$postId"
                   params={{ postId: post.id }}
-                  className="flex items-center gap-1 text-muted-foreground text-xs hover:text-foreground transition-colors"
+                  className="flex items-center gap-1 text-muted text-xs hover:text-foreground transition-colors"
                 >
                   <MessageSquare className="h-3.5 w-3.5" />
                   <span>{commentCount}</span>
@@ -211,7 +211,7 @@ function PostCard({ post, isAdmin }: { post: PostWithUser; isAdmin: boolean }) {
               <Button
                 size="sm"
                 variant="ghost"
-                className={`h-8 w-8 p-0 ${post.isPinned ? "text-primary hover:text-primary" : ""} hover:bg-accent`}
+                className={`h-8 w-8 p-0 ${post.isPinned ? "text-accent hover:text-accent" : ""} hover:bg-accent`}
                 isIconOnly
                 onPress={handlePinClick}
                 isDisabled={pinPost.isPending}
@@ -239,7 +239,7 @@ function PostCard({ post, isAdmin }: { post: PostWithUser; isAdmin: boolean }) {
                 <Button
                   size="sm"
                   variant="ghost"
-                  className="h-8 w-8 p-0 text-destructive hover:text-destructive hover:bg-destructive/10"
+                  className="h-8 w-8 p-0 text-danger hover:text-danger hover:bg-danger/10"
                   isIconOnly
                   onPress={handleDeleteClick}
                   aria-label="Delete post"
@@ -267,19 +267,19 @@ function PostListSkeleton({ count = 5 }: { count?: number }) {
       {Array.from({ length: count }).map((_, i) => (
         <Panel key={i} className="overflow-hidden p-5">
           <div className="flex items-start gap-4">
-            <div className="h-10 w-10 rounded-full bg-muted/50 animate-pulse shrink-0" />
+            <div className="h-10 w-10 rounded-full bg-surface-secondary/50 animate-pulse shrink-0" />
             <div className="flex-1 space-y-3">
               <div className="flex items-center gap-2">
-                <div className="h-4 bg-muted/50 rounded w-24 animate-pulse" />
-                <div className="h-3 bg-muted/50 rounded w-16 animate-pulse" />
+                <div className="h-4 bg-surface-secondary/50 rounded w-24 animate-pulse" />
+                <div className="h-3 bg-surface-secondary/50 rounded w-16 animate-pulse" />
               </div>
-              <div className="h-5 bg-muted/50 rounded w-3/4 animate-pulse" />
+              <div className="h-5 bg-surface-secondary/50 rounded w-3/4 animate-pulse" />
               <div className="space-y-2">
-                <div className="h-4 bg-muted/50 rounded w-full animate-pulse" />
-                <div className="h-4 bg-muted/50 rounded w-5/6 animate-pulse" />
+                <div className="h-4 bg-surface-secondary/50 rounded w-full animate-pulse" />
+                <div className="h-4 bg-surface-secondary/50 rounded w-5/6 animate-pulse" />
               </div>
               <div className="flex gap-2">
-                <div className="h-5 bg-muted/50 rounded w-16 animate-pulse" />
+                <div className="h-5 bg-surface-secondary/50 rounded w-16 animate-pulse" />
               </div>
             </div>
           </div>
@@ -328,7 +328,7 @@ function Community() {
             description="Stay connected with the community"
           />
           <Button
-            className="bg-primary/90 hover:bg-primary"
+            className="bg-accent/90 hover:bg-accent"
             onPress={() => navigate({ to: "/dashboard/community/create-post" })}
           >
             <Plus className="h-4 w-4" />
@@ -356,7 +356,7 @@ function Community() {
             </div>
           ) : (
             <EmptyState
-              icon={<MessageSquare className="h-10 w-10 text-primary/60" />}
+              icon={<MessageSquare className="h-10 w-10 text-accent/60" />}
               title={category ? `No ${category} posts` : "No posts yet"}
               description={getEmptyStateMessage()}
               actionLabel="Create First Post"

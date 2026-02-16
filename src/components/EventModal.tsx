@@ -53,7 +53,7 @@ export function EventModal({ event, open, onOpenChange, isAdmin, onEdit }: Event
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <Modal.Heading className="text-2xl">{event.title}</Modal.Heading>
-                    <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2 mt-2 text-sm text-muted">
                       <Tag className="h-4 w-4" />
                       <span>{EVENT_TYPE_LABELS[event.eventType as keyof typeof EVENT_TYPE_LABELS]}</span>
                     </div>
@@ -70,7 +70,7 @@ export function EventModal({ event, open, onOpenChange, isAdmin, onEdit }: Event
                       </Button>
                       <Button
                         variant="ghost"
-                        className="h-8 w-8 text-destructive hover:text-destructive"
+                        className="h-8 w-8 text-danger hover:text-danger"
                         isIconOnly
                         onPress={() => setDeleteDialogOpen(true)}
                       >
@@ -85,14 +85,14 @@ export function EventModal({ event, open, onOpenChange, isAdmin, onEdit }: Event
             {/* Date and Time */}
             <div className="space-y-2">
               <div className="flex items-start gap-3">
-                <Calendar className="h-5 w-5 text-muted-foreground mt-0.5" />
+                <Calendar className="h-5 w-5 text-muted mt-0.5" />
                 <div className="flex-1">
                   <p className="text-sm font-medium">Date & Time</p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted">
                     {formatDateTime(startDate)}
                   </p>
                   {endDate && (
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-sm text-muted mt-1">
                       <Clock className="h-3 w-3 inline mr-1" />
                       Ends at {formatTime(endDate)}
                     </p>
@@ -105,7 +105,7 @@ export function EventModal({ event, open, onOpenChange, isAdmin, onEdit }: Event
             {event.description && (
               <div className="space-y-2">
                 <p className="text-sm font-medium">Description</p>
-                <p className="text-sm text-muted-foreground whitespace-pre-wrap">
+                <p className="text-sm text-muted whitespace-pre-wrap">
                   {event.description}
                 </p>
               </div>
@@ -113,12 +113,12 @@ export function EventModal({ event, open, onOpenChange, isAdmin, onEdit }: Event
 
             {/* Created By */}
             <div className="flex items-center gap-3 pt-2 border-t border-border">
-              <User className="h-5 w-5 text-muted-foreground" />
+              <User className="h-5 w-5 text-muted" />
               <div className="flex items-center gap-2">
                 <UserAvatar imageKey={event.user.image} name={event.user.name} size="sm" />
                 <div>
                   <p className="text-sm font-medium">{event.user.name}</p>
-                  <p className="text-xs text-muted-foreground">Event creator</p>
+                  <p className="text-xs text-muted">Event creator</p>
                 </div>
               </div>
             </div>

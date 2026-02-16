@@ -15,11 +15,11 @@ import type { NotificationWithUser } from "~/data-access/notifications";
 function getNotificationIcon(type: string) {
   switch (type) {
     case "post-reply":
-      return <MessageSquare className="h-4 w-4 text-primary" />;
+      return <MessageSquare className="h-4 w-4 text-accent" />;
     case "comment-reply":
       return <Reply className="h-4 w-4 text-blue-500" />;
     default:
-      return <Bell className="h-4 w-4 text-muted-foreground" />;
+      return <Bell className="h-4 w-4 text-muted" />;
   }
 }
 
@@ -30,7 +30,7 @@ function NotificationItem({ notification }: { notification: NotificationWithUser
       textValue={notification.title}
       className={cn(
         "flex items-start gap-3 p-3 cursor-pointer",
-        !notification.isRead && "bg-primary/5"
+        !notification.isRead && "bg-accent/5"
       )}
     >
       <div className="shrink-0 mt-0.5">
@@ -41,11 +41,11 @@ function NotificationItem({ notification }: { notification: NotificationWithUser
           {notification.title}
         </p>
         {notification.content && (
-          <p className="text-xs text-muted-foreground line-clamp-2 mt-0.5">
+          <p className="text-xs text-muted line-clamp-2 mt-0.5">
             {notification.content}
           </p>
         )}
-        <p className="text-xs text-muted-foreground mt-1">
+        <p className="text-xs text-muted mt-1">
           {formatDistanceToNow(new Date(notification.createdAt), {
             addSuffix: true,
           })}
@@ -53,7 +53,7 @@ function NotificationItem({ notification }: { notification: NotificationWithUser
       </div>
       {!notification.isRead && (
         <div className="shrink-0">
-          <div className="h-2 w-2 rounded-full bg-primary" />
+          <div className="h-2 w-2 rounded-full bg-accent" />
         </div>
       )}
     </Dropdown.Item>
@@ -101,7 +101,7 @@ export function NotificationBell() {
       <Button variant="ghost" className="relative h-9 w-9" isIconOnly>
         <Bell className="h-5 w-5" />
         {unreadCount > 0 && (
-          <span className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-destructive px-1 text-[10px] font-bold text-destructive-foreground">
+          <span className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-danger px-1 text-[10px] font-bold text-danger-foreground">
             {displayCount}
           </span>
         )}
@@ -140,14 +140,14 @@ export function NotificationBell() {
               <Dropdown.Item
                 id="view-all"
                 textValue="View all notifications"
-                className="flex items-center justify-center py-2 text-sm font-medium text-primary hover:text-primary"
+                className="flex items-center justify-center py-2 text-sm font-medium text-accent hover:text-accent"
               >
                 View all notifications
               </Dropdown.Item>
             </>
           ) : (
             <Dropdown.Item id="empty" textValue="No notifications" isDisabled>
-              <div className="py-6 text-center text-sm text-muted-foreground w-full">
+              <div className="py-6 text-center text-sm text-muted w-full">
                 No notifications yet
               </div>
             </Dropdown.Item>

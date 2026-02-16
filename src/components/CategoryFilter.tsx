@@ -12,8 +12,8 @@ const CATEGORY_LABELS: Record<PostCategory | "all", string> = {
 };
 
 const CATEGORY_COLORS: Record<PostCategory | "all", string> = {
-  all: "bg-muted hover:bg-muted/80 text-foreground",
-  general: "bg-muted hover:bg-muted/80 text-muted-foreground",
+  all: "bg-surface-secondary hover:bg-surface-secondary/80 text-foreground",
+  general: "bg-surface-secondary hover:bg-surface-secondary/80 text-muted",
   question: "bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 dark:text-blue-400",
   discussion: "bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400",
   announcement: "bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400",
@@ -23,7 +23,7 @@ const CATEGORY_COLORS: Record<PostCategory | "all", string> = {
 
 const ACTIVE_RING_COLORS: Record<PostCategory | "all", string> = {
   all: "ring-2 ring-foreground/20",
-  general: "ring-2 ring-muted-foreground/30",
+  general: "ring-2 ring-muted/30",
   question: "ring-2 ring-blue-500/50",
   discussion: "ring-2 ring-purple-500/50",
   announcement: "ring-2 ring-amber-500/50",

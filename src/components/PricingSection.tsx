@@ -64,7 +64,7 @@ export function PricingSection({ showTitle = true }: PricingSectionProps) {
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mb-6 text-foreground">
                 Invest in Your <span className="text-gradient-primary">Future</span>
               </h2>
-              <p className="text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted sm:text-xl max-w-3xl mx-auto leading-relaxed">
                 Start your journey to becoming a full stack engineer. With average salaries of $130k+, 
                 this investment pays for itself in months. Choose the plan that fits your learning style.
               </p>
@@ -116,11 +116,11 @@ export function PricingSection({ showTitle = true }: PricingSectionProps) {
           <div className="mt-16 max-w-2xl mx-auto">
             <div className="glass-card p-8 rounded-2xl text-center">
               <h3 className="text-xl font-bold text-foreground mb-3">ROI Calculator</h3>
-              <p className="text-muted-foreground mb-4 text-lg">
+              <p className="text-muted mb-4 text-lg">
                 If you increase your salary by just $30k (from $50k to $80k), 
-                a $99/month plan pays for itself in <span className="font-bold text-primary">3.3 months</span>.
+                a $99/month plan pays for itself in <span className="font-bold text-accent">3.3 months</span>.
               </p>
-              <p className="text-sm text-muted-foreground font-medium">
+              <p className="text-sm text-muted font-medium">
                 Average full stack engineer salary: $130k. Most members see salary increases of $40k-$80k+.
               </p>
             </div>
@@ -130,10 +130,10 @@ export function PricingSection({ showTitle = true }: PricingSectionProps) {
         {/* Additional Info */}
         <FadeIn delay={500}>
           <div className="text-center mt-12">
-            <p className="text-sm text-muted-foreground mb-6">
+            <p className="text-sm text-muted mb-6">
               All plans include a 14-day free trial. No setup fees. Cancel anytime.
             </p>
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-muted-foreground font-medium">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-muted font-medium">
               <span className="flex items-center gap-2 text-success">✓ Secure payments</span>
               <span className="flex items-center gap-2 text-success">✓ Cancel anytime</span>
               <span className="flex items-center gap-2 text-success">✓ 24/7 community support</span>
