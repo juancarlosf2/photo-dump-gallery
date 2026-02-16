@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "notifications": [
+    {
+      "id": "06c4eac7-2546-4a6e-ba06-bb1b9c5e739a",
+      "type": "feature_verified",
+      "title": "Feature Verified",
+      "message": "\"feature-1771206886309-gtbv7z4r4f7\" has been verified and is complete.",
+      "createdAt": "2026-02-16T01:57:37.919Z",
+      "read": false,
+      "dismissed": false,
+      "featureId": "feature-1771206886309-gtbv7z4r4f7",
+      "projectPath": "/Users/sonofzeus/Documents/Automaker/photo-dump-gallery"
+    }
+  ]
+}

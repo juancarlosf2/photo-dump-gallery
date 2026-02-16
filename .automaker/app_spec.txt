@@ -1,0 +1,110 @@
+<project_specification>
+  <project_name>photo-dump-gallery</project_name>
+
+  <overview>
+    This project was cloned from https://github.com/juancarlosf2/Photodumpgallery.
+    The AI agent will analyze the project structure.
+  </overview>
+
+  <technology_stack>
+    <!-- The AI agent will fill this in after analyzing your project -->
+  </technology_stack>
+
+  <core_capabilities>
+    <!-- List core features and capabilities -->
+  </core_capabilities>
+
+  <implemented_features>
+    <feature>
+      <name>Build Photodump Gallery SaaS MVP Platform</name>
+      <description>Build Photodump Gallery SaaS Web App for Photo Booth Studios (MVP)
+
+Create a multi-tenant, end-to-end workflow from photo intake to background application to delivery, aligned to the existing `photo-dump-gallery` codebase. The MVP must support one tenant with real capture/upload, background application, export, analytics, and subscription gating.
+
+**Technical Implementation**
+- Frontend: Web app for operators and kiosk/capture UI. Use browser MediaDevices API for camera capture, plus drag-drop uploads with client-side validation and preview.
+- Backend: REST or typed RPC API (match current stack) with multi-tenant scoping on every request. Async job processing for image composition and export.
+- Storage: S3-compatible object storage (AWS S3/R2/MinIO). Use per-tenant prefixes and pre-signed URLs for direct uploads and downloads.
+- Image processing: Use `sharp` for resizing, compositing, and format conversions. Template-driven composition for single, collage, and strip layouts.
+- AI backgrounds: Integrate a provider (OpenAI/Replicate/Stable Diffusion API) with moderation checks and prompt safety. Cache generations per prompt+params.
+- Billing: Stripe subscriptions with webhook handling and plan-based access control.
+- Analytics: Store events and daily aggregates in the primary DB; expose usage and revenue metrics.
+
+**Core Data Model (suggested tables)**
+- `tenants`, `users`, `roles`, `tenant_members`
+- `photos` (status, original_url, metadata, size, tenant_id, created_by)
+- `backgrounds` (type: curated/ai, prompt, params, asset_url)
+- `compositions` (layout, inputs, output_url, status, cost, created_at)
+- `exports` (format, resolution, output_url, status, expires_at)
+- `subscriptions` (stripe_customer_id, plan, status, renew_at)
+- `usage_counters` (tenant_id, period, ai_generations, exports, storage_bytes)
+- `events` (type, payload, tenant_id, created_at)
+
+**API Contracts (examples)**
+- `POST /api/uploads/sign` → `{url, fields, objectKey}` for direct upload
+- `POST /api/photos` → create photo record with uploaded object key
+- `POST /api/backgrounds/ai` → `{prompt, params}` returns `background_id` (queued)
+- `POST /api/compositions` → `{photo_ids, background_id, layout, options}` returns `composition_id`
+- `POST /api/exports` → `{composition_id, format, resolution}` returns `export_id`
+- `GET /api/dashboard/metrics?from&amp;to` → usage + revenue metrics
+- `POST /api/stripe/webhook` for subscription state changes
+
+**Workflow**
+- Intake: Capture/upload → validate → store original → create `photos` record
+- Background: Choose curated or AI → generate or fetch → store `backgrounds` record
+- Composition: Apply layout + background → async job creates `compositions` output
+- Export: Async job creates output format(s) → signed URL delivery → optional print stub
+
+**Performance &amp; Reliability**
+- Direct-to-storage uploads to avoid server bottlenecks
+- Async queue for AI generation, composition, export (BullMQ/Cloud Tasks/Sidekiq equivalent)
+- Image size limits and streaming uploads
+- Result caching for repeated AI prompts and composition templates
+- Idempotency keys on create endpoints to prevent duplicate jobs
+
+**Security &amp; Multi-Tenancy**
+- Tenant-scoped authorization on every query
+- Row-level constraints in DB queries (tenant_id)
+- Signed URLs with short TTL and tenant-specific prefixes
+- Webhook signature verification for billing
+- Content moderation for AI prompts and generated images
+
+**Edge Cases &amp; Error Handling**
+- Large uploads: chunking, resumable uploads, retry with backoff
+- Camera failures: fallback to file upload; device capability checks
+- AI failures: retry policy, safe fallback to curated backgrounds, surface errors
+- Retention expiry mid-session: warn and block export if inputs expired
+- Export timeouts: job cancellation + retry; partial result cleanup
+- Concurrent sessions: lock per composition job or use queue de-duplication
+- Billing failures: read-only mode or block new creations; clear messaging
+
+**Retention &amp; Quotas**
+- 15-day deletion via bucket lifecycle policy and/or scheduled cleanup job
+- Daily/monthly AI generation quotas enforced with `usage_counters`
+- Storage quota tracking with warnings and hard limits per plan
+
+**Integration Points**
+- Printing: define `PrintProvider` interface with stub implementation (e.g., `createPrintJob`, `getStatus`)
+- Analytics: optionally export events to a warehouse later; keep DB aggregates now
+
+**Implementation Breakdown**
+1. Codebase analysis: identify framework, routing, ORM, auth, storage integration.
+2. Multi-tenant auth: tenant membership, RBAC, request scoping middleware.
+3. Storage + retention: S3 bucket, signed upload, lifecycle policy, cleanup job.
+4. Photo intake: capture UI, upload flow, server validation, metadata persistence.
+5. Backgrounds: curated library CRUD, AI generation pipeline with moderation.
+6. Composition templates: server-side layout engine using `sharp`.
+7. Export pipeline: async jobs, format conversions, delivery URLs.
+8. Billing: Stripe setup, subscription gating, webhooks.
+9. Dashboard: metrics endpoints, widgets, date-range filtering.
+10. Observability: structured logs, job status tracking, failure alerts.
+
+**Success Criteria**
+- 15-day auto-deletion verified via lifecycle policy and cleanup audits
+- AI generation quotas enforced per tenant
+- Exports available as JPEG/PNG/PDF with consistent presets
+- Dashboard shows photos created, clients served, revenue for date range
+- Subscription inactive blocks new creations and exports</description>
+    </feature>
+  </implemented_features>
+</project_specification>
