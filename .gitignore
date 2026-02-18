@@ -23,3 +23,6 @@ dist/
 # heroui-agents-md
 .heroui-docs/
 .worktrees
+
+# Local Netlify folder
+.netlify

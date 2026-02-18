@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Home,
@@ -27,7 +27,7 @@ import {
 } from "@heroui/react";
 import { Panel } from "~/components/ui/panel";
 import { toast } from "@heroui/react";
-import { ButtonLink } from "~/components/ui/link";
+import { ButtonLink, Link } from "~/components/ui/link";
 import { formatRelativeTime } from "~/utils/song";
 import { cn } from "~/lib/utils";
 import {

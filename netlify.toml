@@ -1,16 +1,14 @@
 [build]
-  # Build command with directory checking
-  command = "bun install && bun run build && ls -la && find . -name 'dist' -o -name '.output' -o -name 'build' | head -10"
+  # Build command
+  command = "rm -rf .netlify/functions-serve .netlify/functions .netlify/functions-internal && bun install --frozen-lockfile && bun run build"
   
   # Directory to publish (where the built files are located)
   publish = "dist"
   
-  # Functions directory for serverless functions
-  functions = ".netlify/functions"
 
 [build.environment]
   # Node.js version
-  NODE_VERSION = "22"
+  NODE_VERSION = "20.19.0"
   
   # Set build environment
   NODE_ENV = "production"
