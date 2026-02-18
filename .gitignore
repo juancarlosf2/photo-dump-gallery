@@ -22,3 +22,4 @@ dist/
 /playwright/.cache/
 # heroui-agents-md
 .heroui-docs/
+.worktrees
