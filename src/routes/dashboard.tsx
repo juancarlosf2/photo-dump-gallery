@@ -18,21 +18,14 @@ import {
   ChevronRight,
   Images,
 } from "lucide-react";
-import { authClient } from "~/lib/auth-client";
-import { redirect } from "@tanstack/react-router";
+import { assertAuthenticatedFn } from "~/fn/guards";
 import { DashboardBackground } from "~/components/DashboardBackground";
 import { useState } from "react";
 import { Button } from "@heroui/react";
 
 export const Route = createFileRoute("/dashboard")({
   beforeLoad: async () => {
-    const session = await authClient.getSession();
-    if (!session) {
-      throw redirect({
-        to: "/sign-in",
-        search: { redirect: "/dashboard" },
-      });
-    }
+    await assertAuthenticatedFn();
   },
   component: DashboardLayout,
 });

@@ -1,9 +1,23 @@
+const splitCsv = (value: string | undefined) =>
+  value
+    ?.split(",")
+    .map((item) => item.trim())
+    .filter(Boolean) ?? [];
+
+const resolvedBetterAuthUrl =
+  process.env.BETTER_AUTH_URL ||
+  process.env.DEPLOY_PRIME_URL ||
+  process.env.URL ||
+  "http://localhost:3000";
+
 export const privateEnv = {
   // Database
   DATABASE_URL: process.env.DATABASE_URL!,
 
   // Better Auth
   BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET!,
+  BETTER_AUTH_URL: resolvedBetterAuthUrl,
+  BETTER_AUTH_TRUSTED_ORIGINS: splitCsv(process.env.BETTER_AUTH_TRUSTED_ORIGINS),
 
   // Stripe
   STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY!,

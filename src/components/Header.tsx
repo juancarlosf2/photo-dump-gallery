@@ -1,5 +1,10 @@
-import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
-import { Button, Dropdown, Modal } from "@heroui/react";
+import {
+  Link,
+  useNavigate,
+  useRouter,
+  useRouterState,
+} from "@tanstack/react-router";
+import { Button, Dropdown, Modal, toast } from "@heroui/react";
 import { authClient } from "~/lib/auth-client";
 import { ModeToggle } from "./mode-toggle";
 import { NotificationBell } from "./NotificationBell";
@@ -77,12 +82,22 @@ export function Header() {
   const routerState = useRouterState();
   const currentPath = routerState.location.pathname;
   const navigate = useNavigate();
+  const router = useRouter();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSignOut = async () => {
-    await authClient.signOut();
-    navigate({ to: "/" });
+    await authClient.signOut({}, {
+      onSuccess: async () => {
+        await router.invalidate();
+        window.location.replace("/");
+      },
+      onError: (error) => {
+        toast.danger("Failed to log out", {
+          description: error.error.message || "Please try again.",
+        });
+      },
+    });
   };
 
   return (

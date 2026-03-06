@@ -1,6 +1,6 @@
 import { useNavigate } from "@tanstack/react-router";
 import type { Key } from "react";
-import { Bell, Check, MessageSquare, Reply } from "lucide-react";
+import { Bell, Check, Images, MessageSquare, Reply } from "lucide-react";
 import { Button, Dropdown } from "@heroui/react";
 import {
   useUnreadCount,
@@ -11,6 +11,7 @@ import {
 import { cn } from "~/lib/utils";
 import { formatDistanceToNow } from "date-fns";
 import type { NotificationWithUser } from "~/data-access/notifications";
+import { getNotificationHref } from "~/utils/notifications";
 
 function getNotificationIcon(type: string) {
   switch (type) {
@@ -18,6 +19,8 @@ function getNotificationIcon(type: string) {
       return <MessageSquare className="h-4 w-4 text-accent" />;
     case "comment-reply":
       return <Reply className="h-4 w-4 text-blue-500" />;
+    case "gallery-feedback":
+      return <Images className="h-4 w-4 text-pink-500" />;
     default:
       return <Bell className="h-4 w-4 text-muted" />;
   }
@@ -87,11 +90,9 @@ export function NotificationBell() {
       if (!notification.isRead) {
         markAsRead.mutate(notification.id);
       }
-      if (notification.relatedId) {
-        navigate({
-          to: "/dashboard/community/post/$postId",
-          params: { postId: notification.relatedId },
-        });
+      const href = getNotificationHref(notification);
+      if (href) {
+        window.location.href = href;
       }
     }
   };

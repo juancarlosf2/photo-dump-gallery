@@ -26,12 +26,35 @@ import type { GalleryPhotoWithFeedback } from "~/data-access/galleries";
 export const Route = createFileRoute("/gallery/$shareToken")({
   loader: async ({ context, params }) => {
     const { queryClient } = context;
-    await queryClient.ensureQueryData(clientGalleryQueryOptions(params.shareToken));
+    try {
+      // Invalid or expired share tokens should render the route-level unavailable
+      // state instead of tripping the app-wide error boundary during preload.
+      await queryClient.ensureQueryData(clientGalleryQueryOptions(params.shareToken));
+    } catch {
+      return;
+    }
   },
   component: ClientGalleryPortal,
 });
 
 type FilterType = "all" | "pending" | "favorite" | "approved" | "rejected";
+
+function getGalleryUnavailableMessage(error: unknown) {
+  const fallbackMessage = "This gallery link may be invalid, expired, or the gallery is no longer active.";
+
+  if (!(error instanceof Error)) {
+    return fallbackMessage;
+  }
+
+  switch (error.message) {
+    case "Gallery not found":
+    case "This gallery is no longer available":
+    case "This gallery has expired":
+      return fallbackMessage;
+    default:
+      return error.message || fallbackMessage;
+  }
+}
 
 function PhotoThumbnail({
   photo,
@@ -322,6 +345,7 @@ function ClientGalleryPortal() {
   const { data: gallery, isLoading, error } = useClientGallery(shareToken);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
   const [filter, setFilter] = useState<FilterType>("all");
+  const unavailableMessage = getGalleryUnavailableMessage(error);
 
   const filteredPhotos = useMemo(() => {
     if (!gallery?.photos) return [];
@@ -361,9 +385,7 @@ function ClientGalleryPortal() {
         <div className="flex flex-col items-center justify-center min-h-[50vh] text-center">
           <ImageOff className="h-16 w-16 text-muted mb-4" />
           <h1 className="text-2xl font-bold mb-2">Gallery Not Available</h1>
-          <p className="text-muted max-w-md">
-            {error?.message || "This gallery link may be invalid, expired, or the gallery is no longer active."}
-          </p>
+          <p className="text-muted max-w-md">{unavailableMessage}</p>
         </div>
       </Page>
     );

@@ -81,7 +81,11 @@ export function useCreateGallery() {
         description: "Your new gallery is ready for photos.",
       });
       queryClient.invalidateQueries({ queryKey: ["galleries"] });
-      navigate({ to: "/dashboard/galleries/$galleryId", params: { galleryId: newGallery.id } });
+      navigate({
+        to: "/dashboard/galleries/$galleryId",
+        params: { galleryId: newGallery.id },
+        search: { tab: undefined },
+      });
     },
     onError: (error) => {
       toast.danger("Failed to create gallery", {

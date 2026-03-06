@@ -33,6 +33,41 @@ function getMaxSize(type: AttachmentType): number {
   return type === "image" ? MAX_IMAGE_SIZE : MAX_VIDEO_SIZE;
 }
 
+const directMediaUploadMetadataSchema = z.object({
+  fileKey: z.string().min(1),
+  contentType: z.string().min(1),
+  fileSize: z.number().int().positive(),
+});
+
+function parseDirectMediaUploadInput(input: unknown) {
+  if (!(input instanceof FormData)) {
+    throw new Error("Expected multipart form data");
+  }
+
+  const fileKey = input.get("fileKey");
+  const contentType = input.get("contentType");
+  const fileSize = input.get("fileSize");
+  const file = input.get("file");
+
+  const metadata = directMediaUploadMetadataSchema.parse({
+    fileKey: typeof fileKey === "string" ? fileKey : "",
+    contentType: typeof contentType === "string" ? contentType : "",
+    fileSize:
+      typeof fileSize === "string" && Number.isFinite(Number(fileSize))
+        ? Number(fileSize)
+        : NaN,
+  });
+
+  if (!(file instanceof Blob)) {
+    throw new Error("Media file is required");
+  }
+
+  return {
+    ...metadata,
+    file,
+  };
+}
+
 export const getMediaUploadUrlFn = createServerFn({ method: "POST" })
   .middleware([authenticatedMiddleware])
   .inputValidator(
@@ -89,6 +124,44 @@ export const getAttachmentUrlFn = createServerFn({ method: "POST" })
     const { storage } = getStorage();
     const url = await storage.getPresignedUrl(data.fileKey);
     return { url };
+  });
+
+export const uploadMediaDirectFn = createServerFn({ method: "POST" })
+  .middleware([authenticatedMiddleware])
+  .inputValidator(parseDirectMediaUploadInput)
+  .handler(async ({ data, context }) => {
+    const attachmentType = getAttachmentType(data.contentType);
+    if (attachmentType !== "image") {
+      throw new Error("Direct upload fallback only supports image files");
+    }
+
+    const maxSize = getMaxSize(attachmentType);
+    if (data.fileSize > maxSize) {
+      const maxSizeMB = Math.round(maxSize / 1024 / 1024);
+      throw new Error(
+        `File too large. Maximum ${attachmentType} size is ${maxSizeMB}MB`
+      );
+    }
+
+    if (data.file.type && data.file.type !== data.contentType) {
+      throw new Error("Uploaded media content type is invalid");
+    }
+
+    if (data.file.size !== data.fileSize) {
+      throw new Error("Uploaded media payload is invalid");
+    }
+
+    const keyPrefix = `attachments/${context.userId}/`;
+    if (!data.fileKey.startsWith(keyPrefix)) {
+      throw new Error("Unauthorized media key");
+    }
+
+    const fileBuffer = Buffer.from(await data.file.arrayBuffer());
+
+    const { storage } = getStorage();
+    await storage.upload(data.fileKey, fileBuffer, data.contentType);
+
+    return { success: true, fileKey: data.fileKey, attachmentType };
   });
 
 export const getMultipleAttachmentUrlsFn = createServerFn({ method: "POST" })

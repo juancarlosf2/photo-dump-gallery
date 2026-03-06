@@ -5,7 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
+    "dev:netlify": "netlify dev --port 3000",
     "build": "vite build && tsc --noEmit",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "build:netlify": "netlify build",
+    "serve:netlify": "netlify serve --port 3000",
+    "preview:netlify": "netlify build && netlify serve --port 3000",
     "start": "node .output/server/index.mjs",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",

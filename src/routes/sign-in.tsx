@@ -41,7 +41,6 @@ export const Route = createFileRoute("/sign-in")({
 function RouteComponent() {
   const router = useRouter();
   const { redirect } = Route.useSearch();
-  const [isLoading, setIsLoading] = useState(false);
   const [authError, setAuthError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -93,8 +92,9 @@ function RouteComponent() {
     },
   });
 
+  const isLoading = form.formState.isSubmitting;
+
   const onSubmit = async (data: SignInForm) => {
-    setIsLoading(true);
     setAuthError("");
 
     try {
@@ -115,12 +115,10 @@ function RouteComponent() {
           onError: (error) => {
             setAuthError(error.error.message || "Invalid email or password");
           },
-        }
+        },
       );
     } catch (error) {
       setAuthError("An unexpected error occurred. Please try again.");
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -246,7 +244,7 @@ function RouteComponent() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                  <Input
+                          <Input
                             placeholder="name@example.com"
                             type="email"
                             autoComplete="email"

@@ -1,4 +1,4 @@
-import { getMediaUploadUrlFn } from "~/fn/attachments";
+import { getMediaUploadUrlFn, uploadMediaDirectFn } from "~/fn/attachments";
 import type { AttachmentType } from "~/db/schema";
 
 export interface UploadProgress {
@@ -100,44 +100,70 @@ export async function uploadMediaFile(
       },
     });
 
-  // Upload file directly to R2
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
+  const uploadWithXhr = () =>
+    new Promise<void>((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
 
-    xhr.upload.onprogress = (event) => {
-      if (event.lengthComputable && onProgress) {
-        const progress: UploadProgress = {
-          loaded: event.loaded,
-          total: event.total,
-          percentage: Math.round((event.loaded / event.total) * 100),
-        };
-        onProgress(progress);
-      }
-    };
+      xhr.upload.onprogress = (event) => {
+        if (event.lengthComputable && onProgress) {
+          const progress: UploadProgress = {
+            loaded: event.loaded,
+            total: event.total,
+            percentage: Math.round((event.loaded / event.total) * 100),
+          };
+          onProgress(progress);
+        }
+      };
 
-    xhr.onload = () => {
-      if (xhr.status >= 200 && xhr.status < 300) {
-        resolve({
-          id: attachmentId,
-          fileKey,
-          fileName: file.name,
-          fileSize: file.size,
-          mimeType: file.type,
-          type: attachmentType,
-        });
-      } else {
-        reject(new Error(`Upload failed: ${xhr.statusText}`));
-      }
-    };
+      xhr.onload = () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve();
+        } else {
+          reject(new Error(`Upload failed: ${xhr.statusText || xhr.status}`));
+        }
+      };
 
-    xhr.onerror = () => {
-      reject(new Error("Upload failed: Network error"));
-    };
+      xhr.onerror = () => {
+        reject(new Error("Upload failed: Network error"));
+      };
 
-    xhr.open("PUT", presignedUrl);
-    xhr.setRequestHeader("Content-Type", file.type);
-    xhr.send(file);
-  });
+      xhr.open("PUT", presignedUrl);
+      xhr.setRequestHeader("Content-Type", file.type);
+      xhr.send(file);
+    });
+
+  try {
+    await uploadWithXhr();
+  } catch (directUploadError) {
+    if (attachmentType !== "image" || file.size > MAX_IMAGE_SIZE) {
+      throw directUploadError;
+    }
+
+    const formData = new FormData();
+    formData.set("fileKey", fileKey);
+    formData.set("contentType", file.type);
+    formData.set("fileSize", String(file.size));
+    formData.set("file", file);
+
+    await uploadMediaDirectFn({
+      data: formData,
+    });
+
+    onProgress?.({
+      loaded: file.size,
+      total: file.size,
+      percentage: 100,
+    });
+  }
+
+  return {
+    id: attachmentId,
+    fileKey,
+    fileName: file.name,
+    fileSize: file.size,
+    mimeType: file.type,
+    type: attachmentType,
+  };
 }
 
 export async function uploadMultipleMediaFiles(

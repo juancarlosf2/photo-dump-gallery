@@ -297,6 +297,7 @@ function GalleryCard({ gallery }: { gallery: GalleryWithStudio }) {
               <Link
                 to="/dashboard/galleries/$galleryId"
                 params={{ galleryId: gallery.id }}
+                search={{ tab: undefined }}
                 className="block"
               >
                 <h3 className="font-semibold text-base leading-tight hover:text-accent transition-colors truncate">
@@ -416,6 +417,7 @@ function GalleryCard({ gallery }: { gallery: GalleryWithStudio }) {
           <ButtonLink
             to="/dashboard/galleries/$galleryId"
             params={{ galleryId: gallery.id }}
+            search={{ tab: undefined }}
             variant="outline"
             size="sm"
           >

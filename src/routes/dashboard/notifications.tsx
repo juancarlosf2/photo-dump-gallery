@@ -5,6 +5,7 @@ import {
   Bell,
   Check,
   CheckCheck,
+  Images,
   MessageSquare,
   Reply,
   Home,
@@ -24,6 +25,7 @@ import {
 import { assertAuthenticatedFn } from "~/fn/guards";
 import { cn } from "~/lib/utils";
 import type { NotificationWithUser } from "~/data-access/notifications";
+import { getNotificationHref } from "~/utils/notifications";
 
 export const Route = createFileRoute("/dashboard/notifications")({
   component: NotificationsPage,
@@ -38,6 +40,8 @@ function getNotificationIcon(type: string) {
       return <MessageSquare className="h-5 w-5 text-accent" />;
     case "comment-reply":
       return <Reply className="h-5 w-5 text-blue-500" />;
+    case "gallery-feedback":
+      return <Images className="h-5 w-5 text-pink-500" />;
     default:
       return <Bell className="h-5 w-5 text-muted" />;
   }
@@ -52,6 +56,8 @@ function NotificationCard({
   onMarkAsRead: (id: string) => void;
   isPending: boolean;
 }) {
+  const href = getNotificationHref(notification);
+
   return (
     <Panel
       className={cn(
@@ -100,8 +106,7 @@ function NotificationCard({
                     <Check className="h-4 w-4" />
                   </Button>
                 )}
-                {notification.relatedId &&
-                  notification.relatedType === "post" && (
+                {href && (
                     <Button
                       variant="outline"
                       size="sm"
@@ -109,7 +114,7 @@ function NotificationCard({
                         if (!notification.isRead) {
                           onMarkAsRead(notification.id);
                         }
-                        window.location.href = `/dashboard/community/post/${notification.relatedId}`;
+                        window.location.href = href;
                       }}
                     >
                       View

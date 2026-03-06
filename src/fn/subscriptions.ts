@@ -4,7 +4,7 @@ import { authenticatedMiddleware } from "./middleware";
 import { stripe } from "~/lib/stripe";
 import { getUserSubscription } from "~/utils/subscription";
 import { getPlanByPriceId } from "~/lib/plans";
-import { publicEnv } from "~/config/publicEnv";
+import { privateEnv } from "~/config/privateEnv";
 
 // Get user's current subscription and plan info
 export const getUserPlanFn = createServerFn({ method: "GET" })
@@ -90,8 +90,8 @@ export const createCheckoutSessionFn = createServerFn({ method: "POST" })
           },
         ],
         mode: "subscription",
-        success_url: `${publicEnv.BETTER_AUTH_URL}/settings?success=true`,
-        cancel_url: `${publicEnv.BETTER_AUTH_URL}/settings?canceled=true`,
+        success_url: `${privateEnv.BETTER_AUTH_URL}/settings?success=true`,
+        cancel_url: `${privateEnv.BETTER_AUTH_URL}/settings?canceled=true`,
         metadata: {
           userId: userId,
           plan: planDetails.plan,
@@ -131,7 +131,7 @@ export const createPortalSessionFn = createServerFn({ method: "POST" })
       // Create customer portal session
       const session = await stripe.billingPortal.sessions.create({
         customer: subscription.stripeCustomerId,
-        return_url: `${publicEnv.BETTER_AUTH_URL}/settings`,
+        return_url: `${privateEnv.BETTER_AUTH_URL}/settings`,
       });
 
       return {

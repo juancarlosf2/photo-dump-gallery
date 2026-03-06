@@ -346,7 +346,17 @@ DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
 
 # Better Auth (auto-generated)
 BETTER_AUTH_SECRET="your-secret-key"
-BETTER_AUTH_URL="http://localhost:3000"
+
+# Optional in local dev. If omitted, Better Auth uses same-origin /api/auth.
+# BETTER_AUTH_URL="https://your-domain.com"
+# VITE_BETTER_AUTH_URL="https://your-domain.com"
+```
+
+For Google OAuth local testing, add these callback URLs in Google Cloud Console:
+
+```bash
+http://localhost:3000/api/auth/callback/google
+http://localhost:8888/api/auth/callback/google
 ```
 
 ## Common Patterns

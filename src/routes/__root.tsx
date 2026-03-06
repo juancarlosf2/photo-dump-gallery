@@ -110,6 +110,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
+                // TanStack Start client RPC expects process.env in the browser.
+                // Bun provides this automatically, but Node-based netlify dev does not.
+                const processRef = window.process || {};
+                processRef.env = processRef.env || {};
+                processRef.env.TSS_SERVER_FN_BASE = processRef.env.TSS_SERVER_FN_BASE || '/_serverFn/';
+                processRef.env.TSS_ROUTER_BASEPATH = processRef.env.TSS_ROUTER_BASEPATH || '/';
+                window.process = processRef;
+
                 // Constants (must match ThemeProvider.tsx)
                 const THEME_COOKIE_NAME = 'ui-theme';
                 const COOKIE_EXPIRY_DAYS = 365;

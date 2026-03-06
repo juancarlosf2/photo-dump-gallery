@@ -6,6 +6,43 @@ import { database } from "~/db";
 import { user } from "~/db/schema";
 import { eq } from "drizzle-orm";
 
+const MAX_DIRECT_IMAGE_UPLOAD_BYTES = 5 * 1024 * 1024;
+
+const directImageUploadMetadataSchema = z.object({
+  imageKey: z.string().min(1),
+  contentType: z.string().regex(/^image\//),
+  fileSize: z.number().int().positive().max(MAX_DIRECT_IMAGE_UPLOAD_BYTES),
+});
+
+function parseDirectImageUploadInput(input: unknown) {
+  if (!(input instanceof FormData)) {
+    throw new Error("Expected multipart form data");
+  }
+
+  const imageKey = input.get("imageKey");
+  const contentType = input.get("contentType");
+  const fileSize = input.get("fileSize");
+  const file = input.get("file");
+
+  const metadata = directImageUploadMetadataSchema.parse({
+    imageKey: typeof imageKey === "string" ? imageKey : "",
+    contentType: typeof contentType === "string" ? contentType : "",
+    fileSize:
+      typeof fileSize === "string" && Number.isFinite(Number(fileSize))
+        ? Number(fileSize)
+        : NaN,
+  });
+
+  if (!(file instanceof Blob)) {
+    throw new Error("Image file is required");
+  }
+
+  return {
+    ...metadata,
+    file,
+  };
+}
+
 export const getPresignedUploadUrlFn = createServerFn({ method: "POST" })
   .middleware([authenticatedMiddleware])
   .inputValidator(
@@ -32,6 +69,26 @@ export const getPresignedImageUploadUrlFn = createServerFn({ method: "POST" })
     const presignedUrl = await storage.getPresignedUploadUrl(data.imageKey);
 
     return { presignedUrl, imageKey: data.imageKey };
+  });
+
+export const uploadImageDirectFn = createServerFn({ method: "POST" })
+  .middleware([authenticatedMiddleware])
+  .inputValidator(parseDirectImageUploadInput)
+  .handler(async ({ data }) => {
+    if (data.file.type && data.file.type !== data.contentType) {
+      throw new Error("Uploaded image content type is invalid");
+    }
+
+    if (data.file.size !== data.fileSize) {
+      throw new Error("Uploaded image payload is invalid");
+    }
+
+    const fileBuffer = Buffer.from(await data.file.arrayBuffer());
+
+    const { storage } = getStorage();
+    await storage.upload(data.imageKey, fileBuffer, data.contentType);
+
+    return { success: true, imageKey: data.imageKey };
   });
 
 export const getImageUrlFn = createServerFn({ method: "POST" })

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, useCallback } from "react";
 import {
   Home,
@@ -43,12 +43,19 @@ import {
   useRegenerateShareToken,
 } from "~/hooks/useGalleries";
 import { galleryQueryOptions } from "~/queries/galleries";
-import { getMediaUploadUrlFn, getAttachmentUrlFn } from "~/fn/attachments";
+import { getAttachmentUrlFn } from "~/fn/attachments";
+import { uploadMediaFile } from "~/utils/storage/media-helpers";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import type { PhotoFeedbackStatus } from "~/db/schema";
 import type { GalleryPhotoWithFeedback } from "~/data-access/galleries";
 
 export const Route = createFileRoute("/dashboard/galleries/$galleryId")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    tab:
+      search.tab === "feedback" || search.tab === "photos"
+        ? search.tab
+        : undefined,
+  }),
   loader: async ({ context, params }) => {
     const { queryClient } = context;
     await queryClient.ensureQueryData(galleryQueryOptions(params.galleryId));
@@ -191,55 +198,30 @@ function PhotoUploader({
     mimeType: string;
   } | null> => {
     try {
-      // Get presigned URL
-      const { presignedUrl, fileKey } = await getMediaUploadUrlFn({
-        data: {
-          fileName: file.name,
-          contentType: file.type,
-          fileSize: file.size,
-        },
+      const result = await uploadMediaFile(file, (progress) => {
+        setUploadingFiles((prev) =>
+          prev.map((f) =>
+            f.file === file
+              ? {
+                  ...f,
+                  progress: progress.percentage,
+                  status: "uploading" as const,
+                }
+              : f,
+          ),
+        );
       });
 
-      // Upload file
-      const xhr = new XMLHttpRequest();
-
-      await new Promise<void>((resolve, reject) => {
-        xhr.upload.onprogress = (e) => {
-          if (e.lengthComputable) {
-            const progress = Math.round((e.loaded / e.total) * 100);
-            setUploadingFiles((prev) =>
-              prev.map((f) =>
-                f.file === file
-                  ? { ...f, progress, status: "uploading" as const }
-                  : f,
-              ),
-            );
-          }
-        };
-
-        xhr.onload = () => {
-          if (xhr.status >= 200 && xhr.status < 300) {
-            setUploadingFiles((prev) =>
-              prev.map((f) =>
-                f.file === file
-                  ? { ...f, progress: 100, status: "done" as const }
-                  : f,
-              ),
-            );
-            resolve();
-          } else {
-            reject(new Error(`Upload failed: ${xhr.statusText}`));
-          }
-        };
-
-        xhr.onerror = () => reject(new Error("Upload failed"));
-        xhr.open("PUT", presignedUrl);
-        xhr.setRequestHeader("Content-Type", file.type);
-        xhr.send(file);
-      });
+      setUploadingFiles((prev) =>
+        prev.map((f) =>
+          f.file === file
+            ? { ...f, progress: 100, status: "done" as const }
+            : f,
+        ),
+      );
 
       return {
-        fileKey,
+        fileKey: result.fileKey,
         fileName: file.name,
         fileSize: file.size,
         mimeType: file.type,
@@ -641,10 +623,11 @@ function FeedbackItem({ photo }: { photo: GalleryPhotoWithFeedback }) {
 
 function GalleryManagementPage() {
   const { galleryId } = Route.useParams();
+  const { tab } = Route.useSearch();
+  const navigate = useNavigate();
   const { data: gallery, isLoading } = useGallery(galleryId);
   const deletePhoto = useDeletePhoto();
   const [settingsModalOpen, setSettingsModalOpen] = useState(false);
-  const [selectedTab, setSelectedTab] = useState("photos");
   const queryClient = useQueryClient();
 
   if (isLoading) {
@@ -712,9 +695,13 @@ function GalleryManagementPage() {
   }
 
   // Filter photos with feedback
-  const photosWithFeedback = gallery.photos.filter(
-    (p) => p.feedback && p.feedback.status !== "pending",
-  );
+  const photosWithFeedback = gallery.photos
+    .filter((photo) => photo.feedback && photo.feedback.status !== "pending")
+    .sort(
+      (left, right) =>
+        new Date(right.feedback?.updatedAt ?? 0).getTime() -
+        new Date(left.feedback?.updatedAt ?? 0).getTime(),
+    );
 
   return (
     <Page>
@@ -803,8 +790,16 @@ function GalleryManagementPage() {
 
         {/* Tabs */}
         <Tabs
-          selectedKey={selectedTab}
-          onSelectionChange={(key) => setSelectedTab(key as string)}
+          selectedKey={tab ?? "photos"}
+          onSelectionChange={(key) =>
+            navigate({
+              to: "/dashboard/galleries/$galleryId",
+              params: { galleryId },
+              search: {
+                tab: key === "feedback" ? "feedback" : undefined,
+              },
+            })
+          }
         >
           <Tabs.ListContainer>
             <Tabs.List aria-label="Gallery sections">

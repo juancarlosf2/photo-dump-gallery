@@ -51,7 +51,7 @@
         "npm:redaxios@~0.5.1",
         "npm:stripe@20",
         "npm:tailwind-merge@^3.4.0",
-        "npm:tailwind-variants@~0.3.1",
+        "npm:tailwind-variants@^3.2.2",
         "npm:tailwindcss@4.1.17",
         "npm:typescript@^5.9.3",
         "npm:vite-tsconfig-paths@^5.1.4",
